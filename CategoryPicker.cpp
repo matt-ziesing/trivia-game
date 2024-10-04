@@ -2,6 +2,14 @@
 
 CategoryPicker::CategoryPicker() {
     chosenCategory = 0; // setting the default chosen category to be 0, which is not a choosable category
+    chosenQuestion = -1; // sets the default chosen question to be -1, which is not a valid question
+    
+    historyLength = 5; // sets the correct initial amount of history questions
+    videoGamesLength = 5; // sets the correct initial amount of video games questions
+    generalKnowledgeLength = 5; // sets the correct initial amount of general knowledge questions
+    sportsLength = 5; // sets the correct initial amount of sports questions
+    musicLength = 5; // sets the correct initial amount of music questions
+    scienceLength = 5; // sets the correct initial amount of science questions
 }
 
 void CategoryPicker::categoryChoice() {
@@ -67,11 +75,49 @@ void CategoryPicker::categoryChoice() {
     }
 }
 
-int CategoryPicker::get_Category() {
+void CategoryPicker::questionSelect() {
+    if (chosenCategory == 1) {
+        chosenQuestion = 1 + (rand() % historyLength); 
+    // sets the chosen question to be an available number in the vector containing all remaining history questions
+
+    } else if (chosenCategory == 2) {
+        chosenQuestion = 1 + (rand() % videoGamesLength);
+    /* sets the chosen question to be an available number in the vector containing all remaining 
+    video game questions*/
+
+    } else if (chosenCategory == 3) {
+        chosenQuestion = 1 + (rand() % generalKnowledgeLength);
+    /* sets the chosen question to be an available number in the vector containing all remaining 
+    general knowledge questions*/
+
+    } else if (chosenCategory == 4) {
+        chosenQuestion = 1 + (rand() % sportsLength);
+    // sets the chosen question to be an available number in the vector containing all remaining sports questions
+
+    } else if (chosenCategory == 5) {
+        chosenQuestion = 1 + (rand() % musicLength);
+    // sets the chosen question to be an available number in the vector containing all remaining music questions
+
+    } else if (chosenCategory == 6) {
+        chosenQuestion = 1 + (rand() % scienceLength);
+    // sets the chosen question to be an available number in the vector containing all remaining science questions
+
+    }
+}
+
+int CategoryPicker::get_chosenCategory() {
     return chosenCategory; // returns the numerical value associated with the category choice
 }
 
-void CategoryPicker::set_Category(int category) {
+void CategoryPicker::set_chosenCategory(int category) {
     CategoryPicker::chosenCategory = category; 
     // sets the number representing the category choice to be what was entered into the function
+}
+
+int CategoryPicker::get_chosenQuestion() {
+    return chosenQuestion;
+}
+
+void CategoryPicker::set_chosenQuestion(int question) {
+    CategoryPicker::chosenQuestion = question;
 }
