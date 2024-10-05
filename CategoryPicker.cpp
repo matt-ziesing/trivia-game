@@ -1,6 +1,7 @@
 #include "CategoryPicker.h"
 #include <cstring>
 #include <cctype>
+#include <ctime>
 
 CategoryPicker::CategoryPicker() {
     chosenCategory = '0'; // setting the default chosen category to be 0, which is not a choosable category
@@ -161,6 +162,7 @@ void CategoryPicker::categoryChoice() {
 }
 
 void CategoryPicker::questionSelect() {
+    srand(time(0));
     if (chosenCategory == std::string(1,'1')) {
         chosenQuestion = 1 + (rand() % historyLength); 
     // sets the chosen question to be an available number in the vector containing all remaining history questions

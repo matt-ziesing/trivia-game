@@ -2,16 +2,20 @@
 #include <iostream>
 using namespace std;
 
-int main() {
+int main() {\
+    QuestionDisplay* q;
     History history;
     CategoryPicker userPicker;
 
+    history.categoryChoice();
+    history.questionSelect();
+
     //userPicker.set_historyLength(0);
-    cout << stoi(history.get_chosenCategory()) << endl;
-    userPicker.categoryChoice();
-    cout << stoi(history.get_chosenCategory()) << endl;
-    cout << history.get_maxQuestions() << endl;
-    cout << history.get_historyLength() << endl;
+    cout << history.get_chosenQuestion() << endl;
+
+
+    q = &history;
+    q->questionDisplay();
 
     return 0;
 }
