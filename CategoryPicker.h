@@ -32,8 +32,20 @@ public:
     int get_chosenQuestion(); // returns the numerical value of the chosen question
     void set_chosenQuestion(int question); // sets the numerical value of the chosen question
 
-    void set_historyLength(int historyLength);
-    int get_historyLength();
+    void set_historyLength(int historyLength); // sets the int representing the history length to the given int
+    void set_videoGameLength(int videoGameLength); 
+    // sets the int representing the video game length to the given int
+    void set_generalKnowledgeLength(int generalKnowledgeLength);
+    // sets the int representing the general knowledge length to the given int
+    void set_sportsLength(int sportsLength); // sets the int representing the sports length to the given int
+    void set_musicLength(int musicLength); // sets the int representing the music length to the given int
+    void set_scienceLength(int scienceLength); // sets the int representing the science length to the given int
+    int get_historyLength(); // gets the int representing the history length
+    int get_videoGameLength(); // gets the int representing the video game length
+    int get_generalKnowledgeLength(); // gets the int representing the general knowledge length
+    int get_sportsLength(); // gets the int representing the sports length
+    int get_musicLength(); // gets the int representing the music length
+    int get_scienceLength(); // gets the int representing the science length
 } ;
 
 #endif

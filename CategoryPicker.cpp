@@ -191,6 +191,28 @@ void CategoryPicker::questionSelect() {
     }
 }
 
+bool CategoryPicker::inputValidityCheck() {
+    bool validInput;
+    // while loop to create an infinite prompting loop until the user enters a valid input
+    while (validInput == false) {
+        // checks every entry by the player to determine if there are any non-digit inputs
+        for (long unsigned int i = 0; i < chosenCategory.size(); i++) {
+                // if a non-digit input is found
+                if (isdigit(chosenCategory[i]) == 0) {
+                    validInput = false;
+                    std::cout << "You have not entered a valid input. Please try again" << std::endl;
+                    std::cin >> chosenCategory;
+                    break;
+                
+                // if no non-digit inputs are found
+                } else {
+                    validInput = true;
+                }
+        }
+    }
+    return validInput;
+}
+
 std::string CategoryPicker::get_chosenCategory() {
     return chosenCategory; // returns the numerical value associated with the category choice
 }
@@ -216,28 +238,49 @@ void CategoryPicker::set_historyLength(int historyLength) {
     CategoryPicker::historyLength = historyLength; // sets the length of the history questions to the given int
 }
 
+void CategoryPicker::set_videoGameLength(int videoGameLength) {
+    CategoryPicker::videoGamesLength = videoGameLength; 
+    // sets the length of the video games length to the given int
+}
+
+void CategoryPicker::set_generalKnowledgeLength(int generalKnowledgeLength) {
+    CategoryPicker::generalKnowledgeLength = generalKnowledgeLength;
+    // sets the length of the general knowledge length to the given int
+}
+
+void CategoryPicker::set_sportsLength(int sportsLength) {
+    CategoryPicker::sportsLength = sportsLength; // sets the sports length to the given int
+}
+
+void CategoryPicker::set_musicLength(int musicLength) {
+    CategoryPicker::musicLength = musicLength; // sets the music length to the given int
+}
+
+void CategoryPicker::set_scienceLength(int scienceLength) {
+    CategoryPicker::scienceLength = scienceLength; // sets the science length to the given int
+}
+
 int CategoryPicker::get_historyLength() {
     return historyLength; // returns the int representing the length of the history questions
 }
 
-bool CategoryPicker::inputValidityCheck() {
-    bool validInput;
-    // while loop to create an infinite prompting loop until the user enters a valid input
-    while (validInput == false) {
-        // checks every entry by the player to determine if there are any non-digit inputs
-        for (long unsigned int i = 0; i < chosenCategory.size(); i++) {
-                // if a non-digit input is found
-                if (isdigit(chosenCategory[i]) == 0) {
-                    validInput = false;
-                    std::cout << "You have not entered a valid input. Please try again" << std::endl;
-                    std::cin >> chosenCategory;
-                    break;
-                
-                // if no non-digit inputs are found
-                } else {
-                    validInput = true;
-                }
-        }
-    }
-    return validInput;
+int CategoryPicker::get_videoGameLength() {
+    return videoGamesLength; // returns the int representing the video games length
+}
+
+int CategoryPicker::get_generalKnowledgeLength() {
+    return generalKnowledgeLength;
+    // returns the int representing the general knowledge length
+}
+
+int CategoryPicker::get_sportsLength() {
+    return sportsLength; // returns the int representing the sports length
+}
+
+int CategoryPicker::get_musicLength() {
+    return musicLength; // returns the int representing the music length
+}
+
+int CategoryPicker::get_scienceLength() {
+    return scienceLength; // returns the int representing the science length
 }
