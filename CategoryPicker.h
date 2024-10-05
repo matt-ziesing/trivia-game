@@ -8,8 +8,9 @@
 // creating the CategoryPicker class that inherits from QuestionDisplay class
 class CategoryPicker : public QuestionDisplay {
 private:
-    int chosenCategory; // represents the numerical value of the chosen category
+    std::string chosenCategory; // represents the numerical value of the chosen category
     int chosenQuestion; // represents the numerical value of the chosen question
+
     int historyLength; // represents the amount of history questions
     int videoGamesLength; // represents the amount of video games questions
     int generalKnowledgeLength; // represents the amount of general knowledge questions
@@ -22,11 +23,17 @@ public:
 
     void categoryChoice(); // allows the user to choose which category they would like their questions form
     void questionSelect(); // selects a random question from the given categories questions, in numerical form
+    void questionDisplay();
+    bool inputValidityCheck(); 
+    // checks whether what the user enters is strictly a number, and doesn't contain letters
     
-    int get_chosenCategory(); // returns the numerical value of the chosen category
-    void set_chosenCategory(int category); // sets the numerical value of the chosen category
+    std::string get_chosenCategory(); // returns the numerical value of the chosen category
+    void set_chosenCategory(std::string category); // sets the numerical value of the chosen category
     int get_chosenQuestion(); // returns the numerical value of the chosen question
     void set_chosenQuestion(int question); // sets the numerical value of the chosen question
+
+    void set_historyLength(int historyLength);
+    int get_historyLength();
 } ;
 
 #endif

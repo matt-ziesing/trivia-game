@@ -12,7 +12,7 @@ private:
 public:
     QuestionDisplay(); // default constructor for the QuestionDisplay class
 
-    virtual void questionDisplay(int category, int question) = 0; 
+    virtual void questionDisplay() = 0; 
     // abstract class to create an interface to display the different questions
     
     std::string get_Answer(); // returns the user's given answer
