@@ -12,3 +12,6 @@ sp-test: Sports.cpp History.cpp VideoGames.cpp GeneralKnowledge.cpp CategoryPick
 
 m-test: Music.cpp Sports.cpp History.cpp VideoGames.cpp GeneralKnowledge.cpp CategoryPicker.cpp QuestionDisplay.cpp musicTest-main.cpp
 	g++ -Wall -o mt Music.cpp Sports.cpp History.cpp VideoGames.cpp GeneralKnowledge.cpp CategoryPicker.cpp QuestionDisplay.cpp musicTest-main.cpp
+
+sc-test: Science.cpp Music.cpp Sports.cpp History.cpp VideoGames.cpp GeneralKnowledge.cpp CategoryPicker.cpp QuestionDisplay.cpp scienceTest-main.cpp
+	g++ -Wall -o sct Science.cpp Music.cpp Sports.cpp History.cpp VideoGames.cpp GeneralKnowledge.cpp CategoryPicker.cpp QuestionDisplay.cpp scienceTest-main.cpp
