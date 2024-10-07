@@ -6,3 +6,6 @@ vg-test: History.cpp VideoGames.cpp CategoryPicker.cpp QuestionDisplay.cpp vidga
 
 gk-test: History.cpp VideoGames.cpp GeneralKnowledge.cpp CategoryPicker.cpp QuestionDisplay.cpp genKnowledgeTest-main.cpp
 	g++ -Wall -o gkt History.cpp VideoGames.cpp GeneralKnowledge.cpp CategoryPicker.cpp QuestionDisplay.cpp genKnowledgeTest-main.cpp
+
+sp-test: Sports.cpp History.cpp VideoGames.cpp GeneralKnowledge.cpp CategoryPicker.cpp QuestionDisplay.cpp sportsTest-main.cpp
+	g++ -Wall -o spt Sports.cpp History.cpp VideoGames.cpp GeneralKnowledge.cpp CategoryPicker.cpp QuestionDisplay.cpp sportsTest-main.cpp
