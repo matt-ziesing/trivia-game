@@ -16,6 +16,7 @@ CategoryPicker::CategoryPicker() {
 }
 
 void CategoryPicker::categoryChoice() {
+    int loop_break = 0;
 
     // the below code is how the command window will prompt the user for their choice of category
     std::cout << "Which oh the quiz categories would you like" << std::endl
@@ -31,7 +32,7 @@ void CategoryPicker::categoryChoice() {
     if (inputValidityCheck() == true) { // this checks to see if the user entered input contains only numbers
     // creating a loop as to stop all non-valid inputs from being entered
 
-        while (!(stoi(chosenCategory) >= 1 && stoi(chosenCategory) <= 6)) { 
+        while (loop_break == 0) { 
             // checks to see if input is between 1-6
             switch (stoi(chosenCategory)) {
 
@@ -40,110 +41,85 @@ void CategoryPicker::categoryChoice() {
                     // checks if there are still available questions in the category
                     if (historyLength > 0) {
                         std::cout << "You have chosen history." << std::endl;
-                        break;
+                        questionSelect();
 
                     } else {
                         // if there are no more available questions in the category
                         std::cout << "There are no more questions available in this category." << std::endl
                                   << "Please pick a different category." << std::endl;
-
-                        // allows for more user input, checking whether it is a valid input still
-                        std::cin >> chosenCategory;
-                        if (inputValidityCheck() == true) {
-                            break;
-                        }
                     }
+                    loop_break = 1;
+                    break;
 
                 // to select the "Video Games" category
                 case 2:
                     // checks if there are still available questions in the class
                     if (videoGamesLength > 0) {
                         std::cout << "You have chosen Video Games." << std::endl;
-                        break;
 
                     } else {
                         // if no available questions left
                         std::cout << "There are no more questions available in this category." << std::endl
                                   << "Please pick a different category." << std::endl;
-
-                        // allows for user input, and checks to see if it valid or not
-                        std::cin >> chosenCategory;
-                        if (inputValidityCheck() == true) {
-                            break;
-                        } 
                     }
+                    loop_break = 1;
+                    break;
 
                 // to select the "General Knowledge" category
                 case 3:
                     // checks to see if there are still available questions
                     if (generalKnowledgeLength > 0) {
                         std::cout << "You have chosen General Knowledge." << std::endl;
-                        break;
+
                     } else {
                         // if there are no available questions
                         std::cout << "There are no more questions available in this category." << std::endl
                                   << "Please pick a different category." << std::endl;
-
-                        // allows user input but checks to see if the input is valid
-                        std::cin >> chosenCategory;
-                        if (inputValidityCheck() == true) {
-                            break;
-                        }
                     }
+                    loop_break = 1;
+                    break;
 
                 // to select the "Sports" category
                 case 4:
                     // checks to see if there are still available questions
                     if (sportsLength > 0) {
                         std::cout << "You have chosen Sports." << std::endl;
-                        break;
+
                     } else {
                         // if there are no available questions left
                         std::cout << "There are no more questions available in this category." << std::endl
                                   << "Please pick a different category." << std::endl;
-
-                        // allows user input but checks whether it is a valid input
-                        std::cin >> chosenCategory;
-                        if (inputValidityCheck() == true) {
-                            break;
-                        }
                     }
+                    loop_break = 1;
+                    break;
 
                 // to select the "Music" category
                 case 5:
                     // checks whether there are still any available questions
                     if (musicLength > 0) {
                         std::cout << "You have chosen Music." << std::endl;
-                        break;
+
                     } else {
                         // if there are no available questions left
                         std::cout << "There are no more questions available in this category." << std::endl
                                   << "Please pick a different category." << std::endl;
-
-                        // allows user input but checks to see whether the input is valid
-                        std::cin >> chosenCategory;
-                        if (inputValidityCheck() == true) {
-                            break;
-                        }
                     }
+                    loop_break = 1;
+                    break;
 
                 // to select the "Science" category
                 case 6:
                     // checks to see if there are still available questions
                     if (scienceLength > 0) {
                         std::cout << "You have chosen Science." << std::endl;
-                        break;
+
                     } else {
                         // if there are no available questions left
                         std::cout << "There are no more questions available in this category." << std::endl
                                   << "Please pick a different category." << std::endl;
-
-                        // allows user input but checks to see if it valid
-                        std::cin >> chosenCategory;
-                        if (inputValidityCheck() == true) {
-                            break;
-                        }
                     }
+                    loop_break = 1;
+                    break;
         
                 // if a non-valid input is detected
                 default:
@@ -156,7 +132,6 @@ void CategoryPicker::categoryChoice() {
                         break;
                     }
             }
-            break;
         }
     }
 }
