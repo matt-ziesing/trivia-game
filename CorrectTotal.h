@@ -10,7 +10,7 @@ private:
 public:
     CorrectTotal(); // default constructor for the class
 
-    virtual void correctCheck(QuestionDisplay* question); 
+    virtual bool correctCheck(QuestionDisplay* question); 
     // virtual function that checks whether the player's answer is correct
 
     int get_Count(); // returns the players total correct count

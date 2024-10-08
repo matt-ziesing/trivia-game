@@ -4,8 +4,8 @@ CorrectTotal::CorrectTotal() {
     totalCorrectCount = 0; 
 }
 
-void CorrectTotal::correctCheck(QuestionDisplay* question) {
-    set_Count(get_Count()); // default state of the function just the correct count ot be what it was before
+bool CorrectTotal::correctCheck(QuestionDisplay* question) {
+    return false; // default state of the function just the correct count ot be what it was before
 }
 
 int CorrectTotal::get_Count() {

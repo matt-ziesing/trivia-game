@@ -15,3 +15,6 @@ m-test: Music.cpp Sports.cpp History.cpp VideoGames.cpp GeneralKnowledge.cpp Cat
 
 sc-test: Science.cpp Music.cpp Sports.cpp History.cpp VideoGames.cpp GeneralKnowledge.cpp CategoryPicker.cpp QuestionDisplay.cpp scienceTest-main.cpp
 	g++ -Wall -o sct Science.cpp Music.cpp Sports.cpp History.cpp VideoGames.cpp GeneralKnowledge.cpp CategoryPicker.cpp QuestionDisplay.cpp scienceTest-main.cpp
+
+ans-test: History.cpp CategoryPicker.cpp QuestionDisplay.cpp CorrectTotal.cpp AnswerCheck.cpp testing.cpp
+	g++ -Wall -o ans History.cpp CategoryPicker.cpp QuestionDisplay.cpp CorrectTotal.cpp AnswerCheck.cpp testing.cpp
