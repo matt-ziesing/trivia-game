@@ -33,7 +33,6 @@ void CategoryPicker::categoryChoice() {
 
         while (!(stoi(chosenCategory) >= 1 && stoi(chosenCategory) <= 6)) { 
             // checks to see if input is between 1-6
-            std::cout << stoi(chosenCategory) << std::endl;
             switch (stoi(chosenCategory)) {
 
                 // to select the "History" category
@@ -157,6 +156,7 @@ void CategoryPicker::categoryChoice() {
                         break;
                     }
             }
+            break;
         }
     }
 }

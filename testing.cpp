@@ -13,7 +13,7 @@ int main() {
     bool userCorrect = true;
 
     while (userCorrect == true) {
-        //userPicker.set_historyLength(0);
+        userPicker.set_historyLength(0);
         userPicker.categoryChoice();
 
         userPicker.questionSelect();
