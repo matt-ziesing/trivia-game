@@ -7,10 +7,11 @@ int main() {\
     History history;
     CategoryPicker userPicker;
 
+    userPicker.set_historyLength(0);
     history.categoryChoice();
     history.questionSelect();
 
-    //userPicker.set_historyLength(0);
+    // userPicker.set_historyLength(0);
     cout << history.get_chosenQuestion() << endl;
 
 

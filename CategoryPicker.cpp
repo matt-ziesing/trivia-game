@@ -30,16 +30,14 @@ void CategoryPicker::categoryChoice() {
     std::cin >> chosenCategory; // this allows the user to enter their category choice
     if (inputValidityCheck() == true) { // this checks to see if the user entered input contains only numbers
     // creating a loop as to stop all non-valid inputs from being entered
-
-        while (!(stoi(chosenCategory) >= 1 && stoi(chosenCategory) <= 6)) { 
+        while ((stoi(chosenCategory) >= 1 && stoi(chosenCategory) <= 6)) { 
             // checks to see if input is between 1-6
-
             switch (stoi(chosenCategory)) {
 
                 // to select the "History" category
                 case 1:
                     // checks if there are still available questions in the category
-                    if (historyLength > 0) {
+                    if (CategoryPicker::historyLength > 0) {
                         std::cout << "You have chosen history." << std::endl;
                         break;
 
@@ -157,6 +155,7 @@ void CategoryPicker::categoryChoice() {
                         break;
                     }
             }
+            break;
         }
     }
 }
