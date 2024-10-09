@@ -18,3 +18,6 @@ sc-test: Science.cpp Music.cpp Sports.cpp History.cpp VideoGames.cpp GeneralKnow
 
 ans-test: History.cpp CategoryPicker.cpp QuestionDisplay.cpp CorrectTotal.cpp AnswerCheck.cpp testing.cpp
 	g++ -Wall -o ans History.cpp CategoryPicker.cpp QuestionDisplay.cpp CorrectTotal.cpp AnswerCheck.cpp testing.cpp
+
+l-test: History.cpp CategoryPicker.cpp QuestionDisplay.cpp CorrectTotal.cpp AnswerCheck.cpp LeaderScores.cpp LeaderBoard.cpp testing.cpp
+	g++ -Wall -o lt History.cpp CategoryPicker.cpp QuestionDisplay.cpp CorrectTotal.cpp AnswerCheck.cpp LeaderScores.cpp LeaderBoard.cpp testing.cpp

@@ -14,24 +14,39 @@ void LeaderBoard::updateLeaderBoard(LeaderScores personScore) {
 
 
     if (personScore.getLeaderScore() > firstPlace.getLeaderScore()) {
+        cout << "You have achieved a new high score!" << endl
+             << "Please enter your name." << endl;
+        string name;
+        cin >> name;
+        personScore.setLeaderName(name);
+
         firstPlace = personScore;
         secondPlace = oldFirst;
         thirdPlace = oldSecond;
-
         leaderArray[0] = personScore;
         leaderArray[1] = oldFirst;
         leaderArray[2] = oldSecond;
 
     } else if (personScore.getLeaderScore() > secondPlace.getLeaderScore()) {
+        cout << "You have achieved a new high score!" << endl
+             << "Please enter your name." << endl;
+        string name;
+        cin >> name;
+        personScore.setLeaderName(name);
+
         secondPlace = personScore;
         thirdPlace = oldSecond;
-
         leaderArray[1] = personScore;
         leaderArray[2] = oldSecond;
 
     } else if (personScore.getLeaderScore() > thirdPlace.getLeaderScore()) {
-        thirdPlace = personScore;
+        cout << "You have achieved a new high score!" << endl
+             << "Please enter your name." << endl;
+        string name;
+        cin >> name;
+        personScore.setLeaderName(name);
 
+        thirdPlace = personScore;
         leaderArray[2] = personScore;
     }
 }
