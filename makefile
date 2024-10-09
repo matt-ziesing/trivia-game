@@ -21,3 +21,6 @@ ans-test: History.cpp CategoryPicker.cpp QuestionDisplay.cpp CorrectTotal.cpp An
 
 l-test: History.cpp CategoryPicker.cpp QuestionDisplay.cpp CorrectTotal.cpp AnswerCheck.cpp LeaderScores.cpp LeaderBoard.cpp testing.cpp
 	g++ -Wall -o lt History.cpp CategoryPicker.cpp QuestionDisplay.cpp CorrectTotal.cpp AnswerCheck.cpp LeaderScores.cpp LeaderBoard.cpp testing.cpp
+
+replay: GameReset.cpp History.cpp CategoryPicker.cpp QuestionDisplay.cpp CorrectTotal.cpp AnswerCheck.cpp LeaderScores.cpp LeaderBoard.cpp testing.cpp
+	g++ -Wall -o r GameReset.cpp History.cpp CategoryPicker.cpp QuestionDisplay.cpp CorrectTotal.cpp AnswerCheck.cpp LeaderScores.cpp LeaderBoard.cpp testing.cpp
