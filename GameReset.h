@@ -13,7 +13,8 @@
 class GameReset {
 public:
     void resetScore(CorrectTotal* playerTotal);
-    void resetQuestions(History* history, CategoryPicker* user);
+    void resetQuestions(History* history, VideoGames* video, GeneralKnowledge* general, 
+                        Sports* sport, Music* music, Science* science, CategoryPicker* user);
 
 } ;
 

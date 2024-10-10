@@ -37,28 +37,27 @@ void Science::questionDisplay() {
 
 void Science::questionDelete() {
     // this determines what question will not be copied over, and be deleted
-    int questionDeleteIndex = get_chosenQuestion();
-    int copyIndex = 0;
+    int paste_index = 0;
 
     // checks to see if there is still at least 1 question left in the category
     if ((max_questions - 1) != 0) {
-        string* tempArray = new string[max_questions]{};
+        string* tempArray = new string[max_questions-1]{};
 
         // copies and pastes over only the questions not marked for deletion
         for (int i = 0; i < max_questions; i++) {
-            int paste_index = i;
-            if (i != questionDeleteIndex) {
-                tempArray[paste_index] = questions[copyIndex];
-                copyIndex++;
+            int questionDeleteIndex = get_chosenQuestion() - 1;
+            int copy_index = i;
+            if (questions[i] != questions[questionDeleteIndex]) {
+                tempArray[paste_index] = questions[copy_index];
                 paste_index++;
 
             } else {
-                copyIndex++;
+                copy_index--;
             }
         }
         // dereferences the temp array to be the questions array, and decrements the number of max questions
-        max_questions--;
         set_scienceLength(get_scienceLength() - 1);
+        max_questions--;
         questions = tempArray;
     }
 }

@@ -1,5 +1,5 @@
 #include "AnswerCheck.h"
-#include <cstring>
+#include <string>
 #include <cctype>
 
 AnswerCheck::AnswerCheck() {
@@ -7,7 +7,7 @@ AnswerCheck::AnswerCheck() {
 
     correctAnswers[0] = "photosynthesis";
     correctAnswers[1] = "thecrust";
-    correctAnswers[2] = "mitochodria";
+    correctAnswers[2] = "mitochondria";
     correctAnswers[3] = "gluteusmaximus";
     correctAnswers[4] = "antartica";
     correctAnswers[5] = "queen";
@@ -37,15 +37,22 @@ AnswerCheck::AnswerCheck() {
     correctAnswers[29] = "pokemongo";
 }
 
+// changes the user's given answer to include no spaces or capitalisation
 bool AnswerCheck::correctCheck(QuestionDisplay* question) {
-    // changes the user's given answer to include no spaces or capitalisation
-    for(long unsigned int j = 0; j < question->get_Answer().size(); j++) {
-        if (question->get_Answer()[j] == ' ') {
-            question->get_Answer().erase(j,1);
-        }
-        question->get_Answer()[j] = tolower(question->get_Answer()[j]);
-    }
+    // sets a string to be what the user given answer actually is
+    std::string changedAnswer = question->get_Answer();
+    for(long unsigned int j = 0; j < changedAnswer.size(); j++) {
+        if (changedAnswer[j] == ' ') {
+            changedAnswer.erase(j,1);
+            j--;
 
+        } else {
+            changedAnswer[j] = tolower(changedAnswer[j]);
+            std::cout << changedAnswer << std::endl;
+            j++;
+        }
+    }
+    question->set_Answer(changedAnswer);
 
     for (int i = 0; i < 30; i++) {
         // checks if the users given answer is correct
