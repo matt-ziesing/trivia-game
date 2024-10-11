@@ -1,7 +1,7 @@
 #ifndef CORRECTTOTAL_H
 #define CORRECTTOTAL_H
 
-#include "QuestionDisplay.h"
+#include "CategoryPicker.h"
 
 class CorrectTotal {
 private:

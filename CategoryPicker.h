@@ -4,6 +4,8 @@
 
 // including the QuestionDisplay class for the CategoryPicker class to inherit from
 #include "QuestionDisplay.h"
+#include <vector>
+#include <iostream>
 
 // creating the CategoryPicker class that inherits from QuestionDisplay class
 class CategoryPicker : public QuestionDisplay {

@@ -5,15 +5,31 @@
 
 class AnswerCheck : public CorrectTotal {
 private:
-    std::string* correctAnswers;
+    std::string* correctHistoryAnswers;
+    std::string* correctVideoGameAnswers;
+    std::string* correctGeneralKnowledgeAnswers;
+    std::string* correctSportsAnswers;
+    std::string* correctMusicAnswers;
+    std::string* correctScienceAnswers;
+
+    int historyAnswerLength;
+    int videoGameAnswerLength;
+    int generalKnowledgeAnswerLength;
+    int sportAnswerLength;
+    int musicAnswerLength;
+    int scienceAnswerLength;
 
 public:
     AnswerCheck();
 
-    bool correctCheck(QuestionDisplay* question);
+    bool correctCheck(QuestionDisplay* question, CategoryPicker user);
 
-    std::string* get_correctAnswers();
-    void set_correctAnswers(std::string* correctAnswers);
+    void set_correctHistoryAnswers(std::string* answers);
+    void set_correctVideoGameAnswers(std::string* answers);
+    void set_correctGeneralKnowledgeAnswers(std::string* answers);
+    void set_correctSportsAnswers(std::string* answers);
+    void set_correctMusicAnswers(std::string* answers);
+    void set_correctScienceAnswers(std::string* answers);
 
     ~AnswerCheck();
 } ;

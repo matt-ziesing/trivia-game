@@ -3,7 +3,7 @@ using namespace std;
 
 Science::Science() {
     // creates an array to store all the questions
-    questions = new string[5]{};
+    questions = new std::string[5]{};
     max_questions = 5;
 
     // these are the questions that will be accessed by the player for the history category
@@ -40,8 +40,8 @@ void Science::questionDelete() {
     int paste_index = 0;
 
     // checks to see if there is still at least 1 question left in the category
-    if ((max_questions - 1) != 0) {
-        string* tempArray = new string[max_questions-1]{};
+    if (max_questions > 0) {
+        std::string* tempArray = new std::string[max_questions-1]{};
 
         // copies and pastes over only the questions not marked for deletion
         for (int i = 0; i < max_questions; i++) {
@@ -70,7 +70,7 @@ int Science::get_maxQuestions() {
     return max_questions; // returns the max_number of questions in the category
 }
 
-void Science::set_Questions(string* questions) {
+void Science::set_Questions(std::string* questions) {
     Science::questions = questions; // sets the given array of questions to be the contained array of questions
 }
 

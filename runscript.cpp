@@ -45,16 +45,14 @@ int main() {
                     string userAnswer;
                     cin.ignore();
                     getline(cin, userAnswer);
-                    //cout << userAnswer << endl << endl;
                     q->set_Answer(userAnswer);
-                    cout << q->get_Answer() << endl;
 
-                    if (ans.correctCheck(q) == true) {
+                    if (ans.correctCheck(q, userPicker) == true) {
                         cout << "You have answered correctly! Good job" << endl;
                         history.questionDelete();
                         userPicker.set_historyLength(history.get_historyLength());
 
-                    } else if (ans.correctCheck(q) == false) {
+                    } else if (ans.correctCheck(q, userPicker) == false) {
                         cout << "You have answered incorrectly. So sorry about that." << endl;
                         userTotal.set_Count(ans.get_Count());
                         userCorrect = false;
@@ -62,7 +60,7 @@ int main() {
                 }
 
             } else if (userPicker.get_chosenCategory() == string(1,'2')) {
-                    if (userPicker.get_historyLength() > 0) {
+                    if (userPicker.get_videoGameLength() > 0) {
                         userPicker.questionSelect();
                         video.set_chosenQuestion(userPicker.get_chosenQuestion());
                         q = &video;
@@ -73,12 +71,12 @@ int main() {
                         getline(cin, userAnswer);
                         q->set_Answer(userAnswer);
 
-                        if (ans.correctCheck(q) == true) {
+                        if (ans.correctCheck(q, userPicker) == true) {
                             cout << "You have answered correctly! Good job" << endl;
                             video.questionDelete();
                             userPicker.set_videoGameLength(video.get_videoGameLength());
 
-                        } else if (ans.correctCheck(q) == false) {
+                        } else if (ans.correctCheck(q, userPicker) == false) {
                             cout << "You have answered incorrectly. So sorry about that." << endl;
                             userTotal.set_Count(ans.get_Count());
                             userCorrect = false;
@@ -86,7 +84,7 @@ int main() {
                     }
 
             } else if (userPicker.get_chosenCategory() == string(1,'3')) {
-                    if (userPicker.get_historyLength() > 0) {
+                    if (userPicker.get_generalKnowledgeLength() > 0) {
                         userPicker.questionSelect();
                         general.set_chosenQuestion(userPicker.get_chosenQuestion());
                         q = &general;
@@ -97,12 +95,12 @@ int main() {
                         getline(cin, userAnswer);
                         q->set_Answer(userAnswer);
 
-                        if (ans.correctCheck(q) == true) {
+                        if (ans.correctCheck(q, userPicker) == true) {
                             cout << "You have answered correctly! Good job" << endl;
                             general.questionDelete();
                             userPicker.set_generalKnowledgeLength(general.get_generalKnowledgeLength());
 
-                        } else if (ans.correctCheck(q) == false) {
+                        } else if (ans.correctCheck(q, userPicker) == false) {
                             cout << "You have answered incorrectly. So sorry about that." << endl;
                             userTotal.set_Count(ans.get_Count());
                             userCorrect = false;
@@ -110,7 +108,7 @@ int main() {
                     }
 
             } else if (userPicker.get_chosenCategory() == string(1,'4')) {
-                    if (userPicker.get_historyLength() > 0) {
+                    if (userPicker.get_sportsLength() > 0) {
                         userPicker.questionSelect();
                         sport.set_chosenQuestion(userPicker.get_chosenQuestion());
                         q = &sport;
@@ -121,12 +119,12 @@ int main() {
                         getline(cin, userAnswer);
                         q->set_Answer(userAnswer);
 
-                        if (ans.correctCheck(q) == true) {
+                        if (ans.correctCheck(q, userPicker) == true) {
                             cout << "You have answered correctly! Good job" << endl;
                             sport.questionDelete();
                             userPicker.set_sportsLength(sport.get_sportsLength());
 
-                        } else if (ans.correctCheck(q) == false) {
+                        } else if (ans.correctCheck(q, userPicker) == false) {
                             cout << "You have answered incorrectly. So sorry about that." << endl;
                             userTotal.set_Count(ans.get_Count());
                             userCorrect = false;
@@ -134,7 +132,7 @@ int main() {
                     }
 
             } else if (userPicker.get_chosenCategory() == string(1,'5')) {
-                    if (userPicker.get_historyLength() > 0) {
+                    if (userPicker.get_musicLength() > 0) {
                         userPicker.questionSelect();
                         music.set_chosenQuestion(userPicker.get_chosenQuestion());
                         q = &music;
@@ -145,12 +143,12 @@ int main() {
                         getline(cin, userAnswer);
                         q->set_Answer(userAnswer);
 
-                        if (ans.correctCheck(q) == true) {
+                        if (ans.correctCheck(q, userPicker) == true) {
                             cout << "You have answered correctly! Good job" << endl;
                             music.questionDelete();
                             userPicker.set_musicLength(music.get_musicLength());
 
-                        } else if (ans.correctCheck(q) == false) {
+                        } else if (ans.correctCheck(q, userPicker) == false) {
                             cout << "You have answered incorrectly. So sorry about that." << endl;
                             userTotal.set_Count(ans.get_Count());
                             userCorrect = false;
@@ -158,7 +156,7 @@ int main() {
                     }
 
             } else if (userPicker.get_chosenCategory() == string(1,'6')) {
-                    if (userPicker.get_historyLength() > 0) {
+                    if (userPicker.get_scienceLength() > 0) {
                         userPicker.questionSelect();
                         science.set_chosenQuestion(userPicker.get_chosenQuestion());
                         q = &science;
@@ -169,12 +167,12 @@ int main() {
                         getline(cin, userAnswer);
                         q->set_Answer(userAnswer);
 
-                        if (ans.correctCheck(q) == true) {
+                        if (ans.correctCheck(q, userPicker) == true) {
                             std::cout << "You have answered correctly! Good job" << endl;
                             science.questionDelete();
                             userPicker.set_scienceLength(science.get_scienceLength());
 
-                        } else if (ans.correctCheck(q) == false) {
+                        } else if (ans.correctCheck(q, userPicker) == false) {
                             cout << "You have answered incorrectly. So sorry about that." << endl;
                             userTotal.set_Count(ans.get_Count());
                             userCorrect = false;
