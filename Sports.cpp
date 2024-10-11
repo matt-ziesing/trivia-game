@@ -41,7 +41,7 @@ void Sports::questionDelete() {
     int paste_index = 0;
 
     // checks to see if there is still at least 1 question left in the category
-    if ((max_questions - 1) != 0) {
+    if (max_questions != 0) {
         string* tempArray = new string[max_questions-1]{};
 
         // copies and pastes over only the questions not marked for deletion

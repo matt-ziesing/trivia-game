@@ -88,6 +88,7 @@ bool AnswerCheck::correctCheck(QuestionDisplay* question, CategoryPicker user) {
                     }
                 }
                 historyAnswerLength--;
+                correctHistoryAnswers = tempArray;
                 return true;
             }
         }
@@ -108,6 +109,7 @@ bool AnswerCheck::correctCheck(QuestionDisplay* question, CategoryPicker user) {
                     }
                 }
                 videoGameAnswerLength--;
+                correctVideoGameAnswers = tempArray;
                 return true;
             }
         }
@@ -128,6 +130,7 @@ bool AnswerCheck::correctCheck(QuestionDisplay* question, CategoryPicker user) {
                     }
                 }
                 generalKnowledgeAnswerLength--;
+                correctGeneralKnowledgeAnswers = tempArray;
                 return true;
             }
         }
@@ -148,6 +151,7 @@ bool AnswerCheck::correctCheck(QuestionDisplay* question, CategoryPicker user) {
                     }
                 }
                 sportAnswerLength--;
+                correctSportsAnswers = tempArray;
                 return true;
             }
         }
@@ -169,6 +173,7 @@ bool AnswerCheck::correctCheck(QuestionDisplay* question, CategoryPicker user) {
                     }
                 }
                 musicAnswerLength--;
+                correctMusicAnswers = tempArray;
                 return true;
             }
         }
@@ -192,11 +197,6 @@ bool AnswerCheck::correctCheck(QuestionDisplay* question, CategoryPicker user) {
                 }
             scienceAnswerLength--;
             correctScienceAnswers = tempArray;
-            std::cout << std::endl;
-            for (int k = 0; k < scienceAnswerLength; k++) {
-                std::cout << correctScienceAnswers[k] << std::endl;
-            }
-                    std::cout << scienceAnswerLength << std::endl;
             return true;
             }
         }
