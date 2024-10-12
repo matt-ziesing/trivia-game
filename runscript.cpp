@@ -190,18 +190,28 @@ int main() {
         }
 
         leaderboard.saveLeaders();
-
+        
+        bool validInput = false;
         cout << "Would you like to play again?" << endl
              << "(Please enter y for yes, or n for no)" << endl;
-            string userDecision;
-            cin >> userDecision;
-            if (userDecision == string(1,'y')) {
-                reset.resetScore(&userTotal);
-                reset.resetQuestions(&history, &video, &general, &sport, &music, &science, &userPicker);
 
-            } else if (userDecision == string(1,'n')) {
-                replay = false;
+        while (validInput == false) {
+                string userDecision;
+                cin >> userDecision;
+                if (userDecision == string(1,'y')) {
+                    reset.resetScore(&userTotal, &ans);
+                    reset.resetQuestions(&history, &video, &general, &sport, &music, &science, &userPicker);
+                    validInput = true;
 
+                } else if (userDecision == string(1,'n')) {
+                    replay = false;
+                    validInput = true;
+
+                } else {
+                    cout << "You have not entered a valid input. Please try again." << endl
+                         << "(Only enter y for yes, and n for no)" << endl;
+                    
+                }
             }
         }  
     return 0;
