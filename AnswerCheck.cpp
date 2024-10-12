@@ -73,7 +73,7 @@ bool AnswerCheck::correctCheck(QuestionDisplay* question, CategoryPicker user) {
         if (question->get_Answer() == correctHistoryAnswers[user.get_chosenQuestion() - 1]) {
             // updates the player's correct total count
             set_Count(get_Count() + 1);
-            if (historyAnswerLength - 1 > 0) {
+            if (historyAnswerLength > 0) {
                 std::string* tempArray = new std::string[historyAnswerLength - 1]{};
                 int pasteIndex = 0;
                 for (int i = 0; i < historyAnswerLength; i++) {
@@ -94,7 +94,7 @@ bool AnswerCheck::correctCheck(QuestionDisplay* question, CategoryPicker user) {
     } else if (user.get_chosenCategory() == std::string(1,'2')) {
         if (question->get_Answer() == correctVideoGameAnswers[user.get_chosenQuestion() - 1]) {
             set_Count(get_Count() + 1);
-            if (videoGameAnswerLength - 1 > 0) {
+            if (videoGameAnswerLength > 0) {
                 std::string* tempArray = new std::string[videoGameAnswerLength - 1]{};
                 int pasteIndex = 0;
                 for (int i = 0; i < videoGameAnswerLength; i++) {
@@ -115,7 +115,7 @@ bool AnswerCheck::correctCheck(QuestionDisplay* question, CategoryPicker user) {
     } else if (user.get_chosenCategory() == std::string(1,'3')) {
         if (question->get_Answer() == correctGeneralKnowledgeAnswers[user.get_chosenQuestion() - 1]) {
             set_Count(get_Count() + 1);
-            if (generalKnowledgeAnswerLength - 1 > 0) {
+            if (generalKnowledgeAnswerLength > 0) {
                 std::string* tempArray = new std::string[generalKnowledgeAnswerLength - 1]{};
                 int pasteIndex = 0;
                 for (int i = 0; i < generalKnowledgeAnswerLength; i++) {
@@ -136,7 +136,7 @@ bool AnswerCheck::correctCheck(QuestionDisplay* question, CategoryPicker user) {
     } else if (user.get_chosenCategory() == std::string(1,'4')) {
         if (question->get_Answer() == correctSportsAnswers[user.get_chosenQuestion() - 1]) {
             set_Count(get_Count() + 1);
-            if (sportAnswerLength - 1 > 0) {
+            if (sportAnswerLength > 0) {
                 std::string* tempArray = new std::string[sportAnswerLength - 1]{};
                 int pasteIndex = 0;
                 for (int i = 0; i < sportAnswerLength; i++) {
@@ -158,7 +158,7 @@ bool AnswerCheck::correctCheck(QuestionDisplay* question, CategoryPicker user) {
     } else if (user.get_chosenCategory() == std::string(1,'5')) {
         if (question->get_Answer() == correctMusicAnswers[user.get_chosenQuestion() - 1]) {
             set_Count(get_Count() + 1);
-            if (musicAnswerLength - 1 > 0) {
+            if (musicAnswerLength > 0) {
                 std::string* tempArray = new std::string[musicAnswerLength - 1]{};
                 int pasteIndex = 0;
                 for (int i = 0; i < musicAnswerLength; i++) {

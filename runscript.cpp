@@ -27,39 +27,39 @@ int main() {
     GameReset reset;
     
     bool replay = true;
-
+    ans.set_Count(30);
     while (replay == true) {
         leaderboard.establishLeaders();
         bool userCorrect = true;
-
         while (userCorrect == true) {
-            userPicker.categoryChoice();
+            if (ans.get_Count() < 30) {
+                userPicker.categoryChoice();
 
-            if (userPicker.get_chosenCategory() == string(1,'1')) {
-                if (userPicker.get_historyLength() > 0) {
-                    userPicker.questionSelect();
-                    history.set_chosenQuestion(userPicker.get_chosenQuestion());
-                    q = &history;
-                    q->questionDisplay();
+                if (userPicker.get_chosenCategory() == string(1,'1')) {
+                    if (userPicker.get_historyLength() > 0) {
+                        userPicker.questionSelect();
+                        history.set_chosenQuestion(userPicker.get_chosenQuestion());
+                        q = &history;
+                        q->questionDisplay();
 
-                    string userAnswer;
-                    cin.ignore();
-                    getline(cin, userAnswer);
-                    q->set_Answer(userAnswer);
+                        string userAnswer;
+                        cin.ignore();
+                        getline(cin, userAnswer);
+                        q->set_Answer(userAnswer);
 
-                    if (ans.correctCheck(q, userPicker) == true) {
-                        cout << "You have answered correctly! Good job" << endl;
-                        history.questionDelete();
-                        userPicker.set_historyLength(history.get_historyLength());
+                        if (ans.correctCheck(q, userPicker) == true) {
+                            cout << "You have answered correctly! Good job" << endl;
+                            history.questionDelete();
+                            userPicker.set_historyLength(history.get_historyLength());
 
-                    } else if (ans.correctCheck(q, userPicker) == false) {
-                        cout << "You have answered incorrectly. So sorry about that." << endl;
-                        userTotal.set_Count(ans.get_Count());
-                        userCorrect = false;
+                        } else if (ans.correctCheck(q, userPicker) == false) {
+                            cout << "You have answered incorrectly. So sorry about that." << endl;
+                            userTotal.set_Count(ans.get_Count());
+                            userCorrect = false;
+                        }
                     }
-                }
 
-            } else if (userPicker.get_chosenCategory() == string(1,'2')) {
+                } else if (userPicker.get_chosenCategory() == string(1,'2')) {
                     if (userPicker.get_videoGameLength() > 0) {
                         userPicker.questionSelect();
                         video.set_chosenQuestion(userPicker.get_chosenQuestion());
@@ -83,7 +83,7 @@ int main() {
                         }
                     }
 
-            } else if (userPicker.get_chosenCategory() == string(1,'3')) {
+                } else if (userPicker.get_chosenCategory() == string(1,'3')) {
                     if (userPicker.get_generalKnowledgeLength() > 0) {
                         userPicker.questionSelect();
                         general.set_chosenQuestion(userPicker.get_chosenQuestion());
@@ -107,7 +107,7 @@ int main() {
                         }
                     }
 
-            } else if (userPicker.get_chosenCategory() == string(1,'4')) {
+                } else if (userPicker.get_chosenCategory() == string(1,'4')) {
                     if (userPicker.get_sportsLength() > 0) {
                         userPicker.questionSelect();
                         sport.set_chosenQuestion(userPicker.get_chosenQuestion());
@@ -131,7 +131,7 @@ int main() {
                         }
                     }
 
-            } else if (userPicker.get_chosenCategory() == string(1,'5')) {
+                } else if (userPicker.get_chosenCategory() == string(1,'5')) {
                     if (userPicker.get_musicLength() > 0) {
                         userPicker.questionSelect();
                         music.set_chosenQuestion(userPicker.get_chosenQuestion());
@@ -155,7 +155,7 @@ int main() {
                         }
                     }
 
-            } else if (userPicker.get_chosenCategory() == string(1,'6')) {
+                } else if (userPicker.get_chosenCategory() == string(1,'6')) {
                     if (userPicker.get_scienceLength() > 0) {
                         userPicker.questionSelect();
                         science.set_chosenQuestion(userPicker.get_chosenQuestion());
@@ -178,6 +178,11 @@ int main() {
                             userCorrect = false;
                         }
                     }
+                }    
+            } else if (ans.get_Count() == 30) { 
+            cout << "You have successfully answered every question in every category. Good job!" << endl;
+            userTotal.set_Count(ans.get_Count());
+            userCorrect = false;
             }
         }
         LeaderScores player("NULL", userTotal.get_Count());
