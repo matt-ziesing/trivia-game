@@ -186,7 +186,7 @@ int main() {
         cout << "The current leaderboard is:" << endl;
         LeaderScores* leaders = leaderboard.getLeaderArray();
         for (int i = 0; i < 3; i++) {
-            cout << leaders[i].getLeaderName() << " " << leaders[i].getLeaderScore() << endl;
+            cout << leaders[i].getLeaderName() << ": " << leaders[i].getLeaderScore() << endl;
         }
 
         leaderboard.saveLeaders();

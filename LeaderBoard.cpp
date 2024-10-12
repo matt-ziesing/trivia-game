@@ -17,14 +17,8 @@ void LeaderBoard::updateLeaderBoard(LeaderScores personScore) {
         cout << "You have achieved a new high score!" << endl
              << "Please enter your name." << endl;
         string name;
-        bool tooLongName = true;
-        while (tooLongName == true) {
-            getline(cin, name);
-            if (name.size() < 99) {
-                personScore.setLeaderName(name);
-                tooLongName = false;
-            }
-        }
+        getline(cin, name);
+        personScore.setLeaderName(name);
 
         firstPlace = personScore;
         secondPlace = oldFirst;
@@ -37,14 +31,8 @@ void LeaderBoard::updateLeaderBoard(LeaderScores personScore) {
         cout << "You have achieved a new high score!" << endl
              << "Please enter your name." << endl;
         string name;
-        bool tooLongName = true;
-        while (tooLongName == true) {
-            getline(cin, name);
-            if (name.size() < 99) {
-                personScore.setLeaderName(name);
-                tooLongName = false;
-            }
-        }
+        getline(cin, name);
+        personScore.setLeaderName(name);
 
         secondPlace = personScore;
         thirdPlace = oldSecond;
@@ -55,14 +43,8 @@ void LeaderBoard::updateLeaderBoard(LeaderScores personScore) {
         cout << "You have achieved a new high score!" << endl
              << "Please enter your name." << endl;
         string name;
-        bool tooLongName = true;
-        while (tooLongName == true) {
-            getline(cin, name);
-            if (name.size() < 99) {
-                personScore.setLeaderName(name);
-                tooLongName = false;
-            }
-        }
+        getline(cin, name);
+        personScore.setLeaderName(name);
 
         thirdPlace = personScore;
         leaderArray[2] = personScore;
