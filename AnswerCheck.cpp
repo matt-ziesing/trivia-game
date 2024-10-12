@@ -67,7 +67,6 @@ bool AnswerCheck::correctCheck(QuestionDisplay* question, CategoryPicker user) {
         }
     }
     question->set_Answer(changedAnswer);
-    std::cout << question->get_Answer() << std::endl;
 
     // checks if the users given answer is correct
     if (user.get_chosenCategory() == std::string(1,'1')) {
@@ -226,6 +225,30 @@ void AnswerCheck::set_correctMusicAnswers(std::string* answers) {
 
 void AnswerCheck::set_correctScienceAnswers(std::string* answers) {
     AnswerCheck::correctScienceAnswers = answers;
+}
+
+void AnswerCheck::set_historyAnswerLength(int historyLength) {
+    AnswerCheck::historyAnswerLength = historyLength;
+}
+
+void AnswerCheck::set_videoGameAnswerLength(int videoGameLength) {
+    AnswerCheck::videoGameAnswerLength = videoGameLength;
+}
+
+void AnswerCheck::set_generalKnowledgeAnswerLength(int generalKnowledgeLength) {
+    AnswerCheck::generalKnowledgeAnswerLength = generalKnowledgeLength;
+}
+
+void AnswerCheck::set_sportsAnswerLength(int sportsLength) {
+    AnswerCheck::sportAnswerLength = sportsLength;
+}
+
+void AnswerCheck::set_musicAnswerLength(int musicLength) {
+    AnswerCheck::musicAnswerLength = musicLength;
+}
+
+void AnswerCheck::set_scienceAnswerLength(int scienceLength) {
+    AnswerCheck::scienceAnswerLength = scienceLength;
 }
 
 AnswerCheck::~AnswerCheck() {

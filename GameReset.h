@@ -8,11 +8,11 @@
 #include "Sports.h"
 #include "Science.h"
 #include "Music.h"
-#include "CorrectTotal.h"
+#include "AnswerCheck.h"
 
 class GameReset {
 public:
-    void resetScore(CorrectTotal* playerTotal);
+    void resetScore(CorrectTotal* playerTotal, AnswerCheck* ans);
     void resetQuestions(History* history, VideoGames* video, GeneralKnowledge* general, 
                         Sports* sport, Music* music, Science* science, CategoryPicker* user);
 

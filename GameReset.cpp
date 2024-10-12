@@ -2,8 +2,65 @@
 
 #include <iostream>
 
-void GameReset::resetScore(CorrectTotal* playerTotal) {
+void GameReset::resetScore(CorrectTotal* playerTotal, AnswerCheck* ans) {
     playerTotal->set_Count(0);
+    ans->set_Count(0);
+
+
+    ans->set_historyAnswerLength(5);
+    std::string* resetHistoryAnswers = new std::string[5]{};
+    resetHistoryAnswers[0] = "1901";
+    resetHistoryAnswers[1] = "1945";
+    resetHistoryAnswers[2] = "germany";
+    resetHistoryAnswers[3] = "augustus";
+    resetHistoryAnswers[4] = "4";
+    ans->set_correctHistoryAnswers(resetHistoryAnswers);
+
+    ans->set_videoGameAnswerLength(5);
+    std::string* resetVideoGameAnswers = new std::string[5]{};
+    resetVideoGameAnswers[0] = "snake";
+    resetVideoGameAnswers[1] = "minecraft";
+    resetVideoGameAnswers[2] = "2017";
+    resetVideoGameAnswers[3] = "tennisfortwo";
+    resetVideoGameAnswers[4] = "pokemongo";
+    ans->set_correctVideoGameAnswers(resetVideoGameAnswers);
+
+    ans->set_generalKnowledgeAnswerLength(5);
+    std::string* resetGeneralKnowledgeAnswers = new std::string[5]{};
+    resetGeneralKnowledgeAnswers[0] = "redrippers";
+    resetGeneralKnowledgeAnswers[1] = "mounteverest";
+    resetGeneralKnowledgeAnswers[2] = "avatar";
+    resetGeneralKnowledgeAnswers[3] = "thebible";
+    resetGeneralKnowledgeAnswers[4] = "murder";
+    ans->set_correctGeneralKnowledgeAnswers(resetGeneralKnowledgeAnswers);
+
+    ans->set_sportsAnswerLength(5);
+    std::string* resetSportAnswers = new std::string[5]{};
+    resetSportAnswers[0] = "fifa";
+    resetSportAnswers[1] = "brisbanelions";
+    resetSportAnswers[2] = "20";
+    resetSportAnswers[3] = "45";
+    resetSportAnswers[4] = "300";
+    ans->set_correctSportsAnswers(resetSportAnswers);
+
+    ans->set_musicAnswerLength(5);
+    std::string* resetMusicAnswers = new std::string[5]{};
+    resetMusicAnswers[0] = "queen";
+    resetMusicAnswers[1] = "beethoven";
+    resetMusicAnswers[2] = "videokilledtheradiostar";
+    resetMusicAnswers[3] = "jimihendrix";
+    resetMusicAnswers[4] = "stayingalive";
+    ans->set_correctMusicAnswers(resetMusicAnswers);
+
+    ans->set_scienceAnswerLength(5);
+    std::string* resetScienceAnswers = new std::string[5]{};
+    resetScienceAnswers[0] = "photosynthesis";
+    resetScienceAnswers[1] = "thecrust";
+    resetScienceAnswers[2] = "mitochondria";
+    resetScienceAnswers[3] = "gluteusmaximus";
+    resetScienceAnswers[4] = "antartica";
+    ans->set_correctScienceAnswers(resetScienceAnswers);
+
 }
 
 void GameReset::resetQuestions(History* history, VideoGames* video, GeneralKnowledge* general, 
