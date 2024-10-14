@@ -28,5 +28,5 @@ replay: GameReset.cpp History.cpp CategoryPicker.cpp QuestionDisplay.cpp Correct
 full: QuestionDisplay.cpp CategoryPicker.cpp History.cpp VideoGames.cpp GeneralKnowledge.cpp Sports.cpp Music.cpp Science.cpp CorrectTotal.cpp AnswerCheck.cpp LeaderScores.cpp LeaderBoard.cpp GameReset.cpp runscript.cpp
 	g++ -Wall -o game QuestionDisplay.cpp CategoryPicker.cpp History.cpp VideoGames.cpp GeneralKnowledge.cpp Sports.cpp Music.cpp Science.cpp CorrectTotal.cpp AnswerCheck.cpp LeaderScores.cpp LeaderBoard.cpp GameReset.cpp runscript.cpp
 
-debug: categoryPickerUnitTests.h questionDisplayUnitTests.h CategoryPicker.cpp QuestionDisplay.cpp unitTesting-main.cpp
-	g++ -Wall -o debug categoryPickerUnitTests.h questionDisplayUnitTests.h CategoryPicker.cpp QuestionDisplay.cpp unitTesting-main.cpp
+debug: categoryPickerUnitTests.h questionDisplayUnitTests.h correctTotalUnitTests.h LeaderBoardUnitTests.h LeaderBoard.cpp LeaderScores.cpp CorrectTotal.cpp CategoryPicker.cpp QuestionDisplay.cpp unitTesting-main.cpp
+	g++ -Wall -o debug categoryPickerUnitTests.h questionDisplayUnitTests.h correctTotalUnitTests.h LeaderBoardUnitTests.h LeaderBoard.cpp LeaderScores.cpp CorrectTotal.cpp CategoryPicker.cpp QuestionDisplay.cpp unitTesting-main.cpp
