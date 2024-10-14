@@ -1,9 +1,10 @@
 #include <iostream>
 #include <cstring>
 #include <cctype>
+#include <unistd.h>
 using namespace std;
 
-int main() {
+/*int main() {
     string test;
     getline(cin, test);
 
@@ -18,5 +19,22 @@ int main() {
 
     cout << test << endl;
 
+    return 0;
+}*/
+
+int main() {
+    system("clear");
+    cout << "You have answered " << endl;
+    sleep(1);
+    system("clear");
+    cout << "You have answered ." << endl;
+    sleep(1);
+    system("clear");
+    cout << "You have answered .." << endl;
+    sleep(1);
+    system("clear");
+    cout << "You have answered ..." << endl;
+    sleep(1);
+    system("clear");
     return 0;
 }

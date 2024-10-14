@@ -22,7 +22,7 @@ private:
 public:
     AnswerCheck();
 
-    bool correctCheck(QuestionDisplay* question, CategoryPicker user);
+    bool correctCheck(QuestionDisplay* question, UserChoices user);
 
     void set_correctHistoryAnswers(std::string* answers);
     void set_correctVideoGameAnswers(std::string* answers);

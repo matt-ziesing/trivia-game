@@ -29,7 +29,7 @@ void LeaderBoard::updateLeaderBoard(LeaderScores personScore) {
 
     } else if (personScore.getLeaderScore() > secondPlace.getLeaderScore()) {
         cout << "You have achieved a new high score!" << endl
-             << "Please enter your name." << endl;
+             << "Please enter your name with no spaces." << endl;
         string name;
         getline(cin, name);
         personScore.setLeaderName(name);

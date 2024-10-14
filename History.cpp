@@ -75,7 +75,13 @@ int History::get_maxQuestions() {
 }
 
 void History::set_Questions(string* questions) {
-    History::questions = questions; // sets the given array of questions to be the contained array of questions
+    //History::questions = questions; // sets the given array of questions to be the contained array of questions
+    delete[] questions;
+
+    History::questions = new std::string[5]{};
+    for (int i = 0; i < 5; i++) {
+        History::questions[i] = questions[i];
+    }
 }
 
 void History::set_maxQuestions(int max_questions) {

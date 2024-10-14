@@ -25,5 +25,5 @@ l-test: History.cpp CategoryPicker.cpp QuestionDisplay.cpp CorrectTotal.cpp Answ
 replay: GameReset.cpp History.cpp CategoryPicker.cpp QuestionDisplay.cpp CorrectTotal.cpp AnswerCheck.cpp LeaderScores.cpp LeaderBoard.cpp testing.cpp
 	g++ -Wall -o r GameReset.cpp History.cpp CategoryPicker.cpp QuestionDisplay.cpp CorrectTotal.cpp AnswerCheck.cpp LeaderScores.cpp LeaderBoard.cpp testing.cpp
 
-full: QuestionDisplay.cpp CategoryPicker.cpp History.cpp VideoGames.cpp GeneralKnowledge.cpp Sports.cpp Music.cpp Science.cpp CorrectTotal.cpp AnswerCheck.cpp LeaderScores.cpp LeaderBoard.cpp GameReset.cpp runscript.cpp
-	g++ -Wall -o game QuestionDisplay.cpp CategoryPicker.cpp History.cpp VideoGames.cpp GeneralKnowledge.cpp Sports.cpp Music.cpp Science.cpp CorrectTotal.cpp AnswerCheck.cpp LeaderScores.cpp LeaderBoard.cpp GameReset.cpp runscript.cpp
+full: QuestionDisplay.cpp UserChoices.cpp History.cpp VideoGames.cpp GeneralKnowledge.cpp Sports.cpp Music.cpp Science.cpp CorrectTotal.cpp AnswerCheck.cpp LeaderScores.cpp LeaderBoard.cpp GameReset.cpp runscript.cpp
+	g++ -Wall -o game QuestionDisplay.cpp UserChoices.cpp History.cpp VideoGames.cpp GeneralKnowledge.cpp Sports.cpp Music.cpp Science.cpp CorrectTotal.cpp AnswerCheck.cpp LeaderScores.cpp LeaderBoard.cpp GameReset.cpp runscript.cpp

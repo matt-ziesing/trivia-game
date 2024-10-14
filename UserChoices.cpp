@@ -2,6 +2,7 @@
 #include <cstring>
 #include <cctype>
 #include <ctime>
+#include <unistd.h>
 
 UserChoices::UserChoices() {
     chosenCategory = '0'; // setting the default chosen category to be 0, which is not a choosable category
@@ -41,12 +42,12 @@ void UserChoices::categoryChoice() {
                     // checks if there are still available questions in the category
                     if (historyLength > 0) {
                         std::cout << "You have chosen history." << std::endl;
-                        questionSelect();
 
                     } else {
                         // if there are no more available questions in the category
                         std::cout << "There are no more questions available in this category." << std::endl
                                   << "Please pick a different category." << std::endl;
+                        sleep(2);
                     }
                     loop_break = 1;
                     break;
@@ -61,6 +62,7 @@ void UserChoices::categoryChoice() {
                         // if no available questions left
                         std::cout << "There are no more questions available in this category." << std::endl
                                   << "Please pick a different category." << std::endl;
+                        sleep(2);
                     }
                     loop_break = 1;
                     break;
@@ -75,6 +77,7 @@ void UserChoices::categoryChoice() {
                         // if there are no available questions
                         std::cout << "There are no more questions available in this category." << std::endl
                                   << "Please pick a different category." << std::endl;
+                        sleep(2);
                     }
                     loop_break = 1;
                     break;
@@ -89,6 +92,7 @@ void UserChoices::categoryChoice() {
                         // if there are no available questions left
                         std::cout << "There are no more questions available in this category." << std::endl
                                   << "Please pick a different category." << std::endl;
+                        sleep(2);
                     }
                     loop_break = 1;
                     break;
@@ -103,6 +107,7 @@ void UserChoices::categoryChoice() {
                         // if there are no available questions left
                         std::cout << "There are no more questions available in this category." << std::endl
                                   << "Please pick a different category." << std::endl;
+                        sleep(2);
                     }
                     loop_break = 1;
                     break;
@@ -115,8 +120,10 @@ void UserChoices::categoryChoice() {
 
                     } else {
                         // if there are no available questions left
+                        sleep(2);
                         std::cout << "There are no more questions available in this category." << std::endl
                                   << "Please pick a different category." << std::endl;
+                        sleep(2);
                     }
                     loop_break = 1;
                     break;

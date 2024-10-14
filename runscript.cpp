@@ -10,6 +10,7 @@
 
 #include <iostream>
 #include <string>
+#include <unistd.h>
 using namespace std;
 
 int main() {
@@ -26,6 +27,9 @@ int main() {
     LeaderBoard leaderboard;
     GameReset reset;
     
+    system("clear");
+
+    //ans.set_Count(30);
     bool replay = true;
     while (replay == true) {
         leaderboard.establishLeaders();
@@ -35,6 +39,7 @@ int main() {
                 userPicker.categoryChoice();
 
                 if (userPicker.get_chosenCategory() == string(1,'1')) {
+                    system("clear");
                     if (userPicker.get_historyLength() > 0) {
                         userPicker.questionSelect();
                         history.set_chosenQuestion(userPicker.get_chosenQuestion());
@@ -51,7 +56,7 @@ int main() {
                             history.questionDelete();
                             userPicker.set_historyLength(history.get_historyLength());
 
-                        } else if (ans.correctCheck(q, userPicker) == false) {
+                        } else {
                             cout << "You have answered incorrectly. So sorry about that." << endl;
                             userTotal.set_Count(ans.get_Count());
                             userCorrect = false;
@@ -59,6 +64,7 @@ int main() {
                     }
 
                 } else if (userPicker.get_chosenCategory() == string(1,'2')) {
+                    system("clear");
                     if (userPicker.get_videoGameLength() > 0) {
                         userPicker.questionSelect();
                         video.set_chosenQuestion(userPicker.get_chosenQuestion());
@@ -75,7 +81,7 @@ int main() {
                             video.questionDelete();
                             userPicker.set_videoGameLength(video.get_videoGameLength());
 
-                        } else if (ans.correctCheck(q, userPicker) == false) {
+                        } else {
                             cout << "You have answered incorrectly. So sorry about that." << endl;
                             userTotal.set_Count(ans.get_Count());
                             userCorrect = false;
@@ -83,6 +89,7 @@ int main() {
                     }
 
                 } else if (userPicker.get_chosenCategory() == string(1,'3')) {
+                    system("clear");
                     if (userPicker.get_generalKnowledgeLength() > 0) {
                         userPicker.questionSelect();
                         general.set_chosenQuestion(userPicker.get_chosenQuestion());
@@ -99,7 +106,7 @@ int main() {
                             general.questionDelete();
                             userPicker.set_generalKnowledgeLength(general.get_generalKnowledgeLength());
 
-                        } else if (ans.correctCheck(q, userPicker) == false) {
+                        } else {
                             cout << "You have answered incorrectly. So sorry about that." << endl;
                             userTotal.set_Count(ans.get_Count());
                             userCorrect = false;
@@ -107,6 +114,7 @@ int main() {
                     }
 
                 } else if (userPicker.get_chosenCategory() == string(1,'4')) {
+                    system("clear");
                     if (userPicker.get_sportsLength() > 0) {
                         userPicker.questionSelect();
                         sport.set_chosenQuestion(userPicker.get_chosenQuestion());
@@ -123,7 +131,7 @@ int main() {
                             sport.questionDelete();
                             userPicker.set_sportsLength(sport.get_sportsLength());
 
-                        } else if (ans.correctCheck(q, userPicker) == false) {
+                        } else {
                             cout << "You have answered incorrectly. So sorry about that." << endl;
                             userTotal.set_Count(ans.get_Count());
                             userCorrect = false;
@@ -131,6 +139,7 @@ int main() {
                     }
 
                 } else if (userPicker.get_chosenCategory() == string(1,'5')) {
+                    system("clear");
                     if (userPicker.get_musicLength() > 0) {
                         userPicker.questionSelect();
                         music.set_chosenQuestion(userPicker.get_chosenQuestion());
@@ -147,7 +156,7 @@ int main() {
                             music.questionDelete();
                             userPicker.set_musicLength(music.get_musicLength());
 
-                        } else if (ans.correctCheck(q, userPicker) == false) {
+                        } else {
                             cout << "You have answered incorrectly. So sorry about that." << endl;
                             userTotal.set_Count(ans.get_Count());
                             userCorrect = false;
@@ -155,6 +164,7 @@ int main() {
                     }
 
                 } else if (userPicker.get_chosenCategory() == string(1,'6')) {
+                    system("clear");
                     if (userPicker.get_scienceLength() > 0) {
                         userPicker.questionSelect();
                         science.set_chosenQuestion(userPicker.get_chosenQuestion());
@@ -171,7 +181,7 @@ int main() {
                             science.questionDelete();
                             userPicker.set_scienceLength(science.get_scienceLength());
 
-                        } else if (ans.correctCheck(q, userPicker) == false) {
+                        } else {
                             cout << "You have answered incorrectly. So sorry about that." << endl;
                             userTotal.set_Count(ans.get_Count());
                             userCorrect = false;
@@ -179,7 +189,8 @@ int main() {
                     }
                 }    
             } else if (ans.get_Count() == 30) { 
-            cout << "You have successfully answered every question in every category. Good job!" << endl;
+            system("clear");
+            cout << "You have successfully answered every question in every category. Good job!" << endl << endl;
             userTotal.set_Count(ans.get_Count());
             userCorrect = false;
             }
@@ -187,7 +198,7 @@ int main() {
         LeaderScores player("NULL", userTotal.get_Count());
         leaderboard.updateLeaderBoard(player);
 
-        cout << "The current leaderboard is:" << endl;
+        cout << endl << "The current leaderboard is:" << endl;
         LeaderScores* leaders = leaderboard.getLeaderArray();
         for (int i = 0; i < 3; i++) {
             cout << leaders[i].getLeaderName() << ": " << leaders[i].getLeaderScore() << endl;
@@ -196,7 +207,7 @@ int main() {
         leaderboard.saveLeaders();
         
         bool validInput = false;
-        cout << "Would you like to play again?" << endl
+        cout << endl << "Would you like to play again?" << endl
              << "(Please enter y for yes, or n for no)" << endl;
 
         while (validInput == false) {
@@ -205,7 +216,15 @@ int main() {
                 if (userDecision == string(1,'y')) {
                     reset.resetScore(&userTotal, &ans);
                     reset.resetQuestions(&history, &video, &general, &sport, &music, &science, &userPicker);
+                    cout << history.get_maxQuestions() << endl;
+                    cout << ans.get_historyAnswerLength() << endl;
+                    for (int i = 0; i < history.get_maxQuestions(); i++) {
+                        cout << ans.get_correctHistoryAnswers()[i] << endl << endl;
+                        cout << history.get_Questions()[i] << endl;
+                    }
+                    sleep(10);
                     validInput = true;
+                    system("clear");
 
                 } else if (userDecision == string(1,'n')) {
                     replay = false;
