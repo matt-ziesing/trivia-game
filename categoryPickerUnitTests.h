@@ -5,7 +5,7 @@ using namespace std;
 #ifndef UNITTESTS_H
 #define UNITTESTS_H
 
-class UnitTests {
+class CategoryUnitTests {
 public:
     void runCategoryPickerTests() {
         initializeTests();
@@ -16,6 +16,7 @@ public:
 
 private:
     void testUserInput() {
+        system("clear");
         CategoryPicker userPicker;
         userPicker.categoryChoice();
         // inside the function, the user enters the number 1

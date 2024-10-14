@@ -1,8 +1,12 @@
 #include "categoryPickerUnitTests.h"
+#include "questionDisplayUnitTests.h"
 
 int main() {
-    UnitTests unitTests;
-    unitTests.runCategoryPickerTests();
+    CategoryUnitTests categoryUnitTests;
+    questionUnitTests questionUnitTests;
+
+    //categoryUnitTests.runCategoryPickerTests();
+    questionUnitTests.runQuestionDisplayTests();
 
     return 0;
 }
