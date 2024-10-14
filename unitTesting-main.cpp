@@ -3,19 +3,22 @@
 #include "correctTotalUnitTests.h"
 #include "LeaderBoardUnitTests.h"
 #include "GameResetUnitTests.h"
+#include "AnswerCheckUnitTests.h"
 
 int main() {
     //CategoryUnitTests categoryUnitTests;
     //questionUnitTests questionUnitTests;
     //CorrectTotalUnitTests correctTotalUnitTests;
     //LeaderboardUnitTest leaderBoardUnitTests;
-    GameResetUnitTest gameResetUnitTest;
+    //GameResetUnitTest gameResetUnitTest;
+    AnswerCheckUnitTest answerCheckUnitTest;
 
     //categoryUnitTests.runCategoryPickerTests();
     //questionUnitTests.runQuestionDisplayTests();
     //correctTotalUnitTests.runCorrectTotalTests();
     //leaderBoardUnitTests.runLeaderboardTests();
-    gameResetUnitTest.runGameResetTests();
+    //gameResetUnitTest.runGameResetTests();
+    answerCheckUnitTest.runAnswerCheckTests();
 
     return 0;
 }
