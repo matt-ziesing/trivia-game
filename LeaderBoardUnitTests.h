@@ -6,9 +6,11 @@ using namespace std;
 class LeaderboardUnitTest {
 public:
     void runLeaderboardTests() {
+        // unit test functions for the leaderscores class
         initialiseLeaderScores();
         leaderscoresSettersTest();
 
+        // unit test functions for the leaderboard class
         leaderboardEstablishTest();
         updateLeaderBoardTest();
         saveLeadersTest();
