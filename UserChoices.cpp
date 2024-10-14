@@ -2,7 +2,6 @@
 #include <cstring>
 #include <cctype>
 #include <ctime>
-#include <unistd.h>
 
 UserChoices::UserChoices() {
     chosenCategory = '0'; // setting the default chosen category to be 0, which is not a choosable category

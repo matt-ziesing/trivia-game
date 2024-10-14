@@ -1,7 +1,6 @@
 #include "AnswerCheck.h"
 #include <string>
 #include <cctype>
-#include <unistd.h>
 
 AnswerCheck::AnswerCheck() {
     correctHistoryAnswers = new std::string[5]{};
@@ -68,20 +67,6 @@ bool AnswerCheck::correctCheck(QuestionDisplay* question, UserChoices user) {
         }
     }
     question->set_Answer(changedAnswer);
-
-    /*system("clear");
-    std::cout << "You have answered " << std::endl;
-    sleep(1);
-    system("clear");
-    std::cout << "You have answered ." << std::endl;
-    sleep(1);
-    system("clear");
-    std::cout << "You have answered .." << std::endl;
-    sleep(1);
-    system("clear");
-    std::cout << "You have answered ..." << std::endl;
-    sleep(1);
-    system("clear");*/
 
     // checks if the users given answer is correct
     if (user.get_chosenCategory() == std::string(1,'1')) {
