@@ -27,7 +27,6 @@ int main() {
     GameReset reset;
     
     bool replay = true;
-    ans.set_Count(30);
     while (replay == true) {
         leaderboard.establishLeaders();
         bool userCorrect = true;
