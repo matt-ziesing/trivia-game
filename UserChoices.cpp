@@ -44,7 +44,8 @@ void UserChoices::categoryChoice() {
 
                     } else {
                         // if there are no more available questions in the category
-                        std::cout << "There are no more questions available in this category." << std::endl
+                        std::cout << std::endl
+                                  << "There are no more questions available in this category." << std::endl
                                   << "Please pick a different category." << std::endl;
                     }
                     loop_break = 1;
@@ -58,7 +59,8 @@ void UserChoices::categoryChoice() {
 
                     } else {
                         // if no available questions left
-                        std::cout << "There are no more questions available in this category." << std::endl
+                        std::cout << std::endl
+                                  << "There are no more questions available in this category." << std::endl
                                   << "Please pick a different category." << std::endl;
                     }
                     loop_break = 1;
@@ -72,7 +74,8 @@ void UserChoices::categoryChoice() {
 
                     } else {
                         // if there are no available questions
-                        std::cout << "There are no more questions available in this category." << std::endl
+                        std::cout << std::endl
+                                  << "There are no more questions available in this category." << std::endl
                                   << "Please pick a different category." << std::endl;
                     }
                     loop_break = 1;
@@ -86,7 +89,8 @@ void UserChoices::categoryChoice() {
 
                     } else {
                         // if there are no available questions left
-                        std::cout << "There are no more questions available in this category." << std::endl
+                        std::cout << std::endl
+                                  << "There are no more questions available in this category." << std::endl
                                   << "Please pick a different category." << std::endl;
                     }
                     loop_break = 1;
@@ -100,7 +104,8 @@ void UserChoices::categoryChoice() {
 
                     } else {
                         // if there are no available questions left
-                        std::cout << "There are no more questions available in this category." << std::endl
+                        std::cout << std::endl
+                                  << "There are no more questions available in this category." << std::endl
                                   << "Please pick a different category." << std::endl;
                     }
                     loop_break = 1;
@@ -114,7 +119,8 @@ void UserChoices::categoryChoice() {
 
                     } else {
                         // if there are no available questions left
-                        std::cout << "There are no more questions available in this category." << std::endl
+                        std::cout << std::endl
+                                  << "There are no more questions available in this category." << std::endl
                                   << "Please pick a different category." << std::endl;
                     }
                     loop_break = 1;

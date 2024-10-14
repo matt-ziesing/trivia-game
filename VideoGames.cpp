@@ -34,7 +34,7 @@ void VideoGames::questionDisplay() {
         
     }
     cout << "(Please enter any number answer as a number, and any worded answer as a word." << endl
-         << " Spacing and capitalisation do not matter.)" << endl;
+         << " Spacing and capitalisation do not matter.)" << endl << endl;
 }
 
 void VideoGames::questionDelete() {
