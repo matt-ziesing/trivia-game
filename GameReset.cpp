@@ -64,7 +64,7 @@ void GameReset::resetScore(CorrectTotal* playerTotal, AnswerCheck* ans) {
 }
 
 void GameReset::resetQuestions(History* history, VideoGames* video, GeneralKnowledge* general, 
-                               Sports* sport, Music* music, Science* science, CategoryPicker* user) {
+                               Sports* sport, Music* music, Science* science, UserChoices* user) {
 
     std::string* historyQuestions = new std::string[5]{};
     historyQuestions[0] = "When did Australia achieve Federation?";

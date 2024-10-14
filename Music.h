@@ -1,9 +1,9 @@
 #ifndef MUSIC_H
 #define MUSIC_H
 
-#include "CategoryPicker.h"
+#include "UserChoices.h"
 
-class Music : public CategoryPicker {
+class Music : public UserChoices {
 private:
     std::string* questions; // represents all questions contained in the class
     int max_questions; // represents the current max number of questions

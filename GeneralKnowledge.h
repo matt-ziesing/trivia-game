@@ -1,9 +1,9 @@
 #ifndef GENERALKNOWLEDGE_H
 #define GENERALKNOWLEDGE_H
 
-#include "CategoryPicker.h"
+#include "UserChoices.h"
 
-class GeneralKnowledge : public CategoryPicker {
+class GeneralKnowledge : public UserChoices {
 private:
     std::string* questions; // represents all questions contained in the class
     int max_questions; // represents the current max number of questions

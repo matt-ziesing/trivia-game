@@ -1,9 +1,9 @@
 #ifndef SPORTS_H
 #define SPORTS_H
 
-#include "CategoryPicker.h"
+#include "UserChoices.h"
 
-class Sports : public CategoryPicker {
+class Sports : public UserChoices {
 private:
     std::string* questions; // represents all questions contained in the class
     int max_questions; // represents the current max number of questions

@@ -8,7 +8,7 @@
 #include <iostream>
 
 // creating the CategoryPicker class that inherits from QuestionDisplay class
-class CategoryPicker : public QuestionDisplay {
+class UserChoices : public QuestionDisplay {
 private:
     std::string chosenCategory; // represents the numerical value of the chosen category
     int chosenQuestion; // represents the numerical value of the chosen question
@@ -21,7 +21,7 @@ private:
     int scienceLength; // represents the amount of science questions
 
 public:
-    CategoryPicker(); // default constructor for the CategoryPicker class
+    UserChoices(); // default constructor for the CategoryPicker class
 
     void categoryChoice(); // allows the user to choose which category they would like their questions form
     void questionSelect(); // selects a random question from the given categories questions, in numerical form

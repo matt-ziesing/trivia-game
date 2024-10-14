@@ -1,9 +1,9 @@
 #ifndef HISTORY_H
 #define HISTORY_H
 
-#include "CategoryPicker.h"
+#include "UserChoices.h"
 
-class History : public CategoryPicker {
+class History : public UserChoices {
 private:
     std::string* questions; // represents all questions contained in the class
     int max_questions; // represents the current max number of questions

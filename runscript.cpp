@@ -20,7 +20,7 @@ int main() {
     Sports sport;
     Music music;
     Science science;
-    CategoryPicker userPicker;
+    UserChoices userPicker;
     CorrectTotal userTotal;
     AnswerCheck ans;
     LeaderBoard leaderboard;

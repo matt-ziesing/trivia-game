@@ -1,9 +1,9 @@
-#include "CategoryPicker.h"
+#include "UserChoices.h"
 #include <cstring>
 #include <cctype>
 #include <ctime>
 
-CategoryPicker::CategoryPicker() {
+UserChoices::UserChoices() {
     chosenCategory = '0'; // setting the default chosen category to be 0, which is not a choosable category
     chosenQuestion = -1; // sets the default chosen question to be -1, which is not a valid question
     
@@ -15,7 +15,7 @@ CategoryPicker::CategoryPicker() {
     scienceLength = 5; // sets the correct initial amount of science questions
 }
 
-void CategoryPicker::categoryChoice() {
+void UserChoices::categoryChoice() {
     int loop_break = 0;
 
     // the below code is how the command window will prompt the user for their choice of category
@@ -136,7 +136,7 @@ void CategoryPicker::categoryChoice() {
     }
 }
 
-void CategoryPicker::questionSelect() {
+void UserChoices::questionSelect() {
     srand(time(0));
     if (chosenCategory == std::string(1,'1')) {
         chosenQuestion = 1 + (rand() % historyLength); 
@@ -168,7 +168,7 @@ void CategoryPicker::questionSelect() {
     }
 }
 
-bool CategoryPicker::inputValidityCheck() {
+bool UserChoices::inputValidityCheck() {
     bool validInput;
     // while loop to create an infinite prompting loop until the user enters a valid input
     while (validInput == false) {
@@ -190,74 +190,74 @@ bool CategoryPicker::inputValidityCheck() {
     return validInput;
 }
 
-std::string CategoryPicker::get_chosenCategory() {
+std::string UserChoices::get_chosenCategory() {
     return chosenCategory; // returns the numerical value associated with the category choice
 }
 
-void CategoryPicker::set_chosenCategory(std::string category) {
-    CategoryPicker::chosenCategory = category; 
+void UserChoices::set_chosenCategory(std::string category) {
+    UserChoices::chosenCategory = category; 
     // sets the number representing the category choice to be what was entered into the function
 }
 
-int CategoryPicker::get_chosenQuestion() {
+int UserChoices::get_chosenQuestion() {
     return chosenQuestion; // returns the chosen question by the player
 }
 
-void CategoryPicker::set_chosenQuestion(int question) {
-    CategoryPicker::chosenQuestion = question; // sets the chosen question by the player to the given int
+void UserChoices::set_chosenQuestion(int question) {
+    UserChoices::chosenQuestion = question; // sets the chosen question by the player to the given int
 }
 
-void CategoryPicker::questionDisplay() {
+void UserChoices::questionDisplay() {
     std::cout << "NULL" << std::endl; // default questionDisplay to be overloaded by its child classes
 }
 
-void CategoryPicker::set_historyLength(int historyLength) {
-    CategoryPicker::historyLength = historyLength; // sets the length of the history questions to the given int
+void UserChoices::set_historyLength(int historyLength) {
+    UserChoices::historyLength = historyLength; // sets the length of the history questions to the given int
 }
 
-void CategoryPicker::set_videoGameLength(int videoGameLength) {
-    CategoryPicker::videoGamesLength = videoGameLength; 
+void UserChoices::set_videoGameLength(int videoGameLength) {
+    UserChoices::videoGamesLength = videoGameLength; 
     // sets the length of the video games length to the given int
 }
 
-void CategoryPicker::set_generalKnowledgeLength(int generalKnowledgeLength) {
-    CategoryPicker::generalKnowledgeLength = generalKnowledgeLength;
+void UserChoices::set_generalKnowledgeLength(int generalKnowledgeLength) {
+    UserChoices::generalKnowledgeLength = generalKnowledgeLength;
     // sets the length of the general knowledge length to the given int
 }
 
-void CategoryPicker::set_sportsLength(int sportsLength) {
-    CategoryPicker::sportsLength = sportsLength; // sets the sports length to the given int
+void UserChoices::set_sportsLength(int sportsLength) {
+    UserChoices::sportsLength = sportsLength; // sets the sports length to the given int
 }
 
-void CategoryPicker::set_musicLength(int musicLength) {
-    CategoryPicker::musicLength = musicLength; // sets the music length to the given int
+void UserChoices::set_musicLength(int musicLength) {
+    UserChoices::musicLength = musicLength; // sets the music length to the given int
 }
 
-void CategoryPicker::set_scienceLength(int scienceLength) {
-    CategoryPicker::scienceLength = scienceLength; // sets the science length to the given int
+void UserChoices::set_scienceLength(int scienceLength) {
+    UserChoices::scienceLength = scienceLength; // sets the science length to the given int
 }
 
-int CategoryPicker::get_historyLength() {
+int UserChoices::get_historyLength() {
     return historyLength; // returns the int representing the length of the history questions
 }
 
-int CategoryPicker::get_videoGameLength() {
+int UserChoices::get_videoGameLength() {
     return videoGamesLength; // returns the int representing the video games length
 }
 
-int CategoryPicker::get_generalKnowledgeLength() {
+int UserChoices::get_generalKnowledgeLength() {
     return generalKnowledgeLength;
     // returns the int representing the general knowledge length
 }
 
-int CategoryPicker::get_sportsLength() {
+int UserChoices::get_sportsLength() {
     return sportsLength; // returns the int representing the sports length
 }
 
-int CategoryPicker::get_musicLength() {
+int UserChoices::get_musicLength() {
     return musicLength; // returns the int representing the music length
 }
 
-int CategoryPicker::get_scienceLength() {
+int UserChoices::get_scienceLength() {
     return scienceLength; // returns the int representing the science length
 }
