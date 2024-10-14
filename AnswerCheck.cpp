@@ -251,6 +251,54 @@ void AnswerCheck::set_scienceAnswerLength(int scienceLength) {
     AnswerCheck::scienceAnswerLength = scienceLength;
 }
 
+std::string* AnswerCheck::get_correctHistoryAnswers() {
+    return correctHistoryAnswers;
+}
+
+std::string* AnswerCheck::get_correctVideoGameAnswers() {
+    return correctVideoGameAnswers;
+}
+
+std::string* AnswerCheck::get_correctGeneralKnowledgeAnswers() {
+    return correctGeneralKnowledgeAnswers;
+}
+
+std::string* AnswerCheck::get_correctSportsAnswers() {
+    return correctSportsAnswers;
+}
+
+std::string* AnswerCheck::get_correctMusicAnswers() {
+    return correctMusicAnswers;
+}
+
+std::string* AnswerCheck::get_correctScienceAnswers() {
+    return correctScienceAnswers;
+}
+
+int AnswerCheck::get_historyAnswerLength() {
+    return historyAnswerLength;
+}
+
+int AnswerCheck::get_videoGameAnswerLength() {
+    return videoGameAnswerLength;
+}
+
+int AnswerCheck::get_generalKnowledgeAnswerLength() {
+    return generalKnowledgeAnswerLength;
+}
+
+int AnswerCheck::get_sportsAnswerLength() {
+    return sportAnswerLength;
+}
+
+int AnswerCheck::get_musicAnswerLength() {
+    return musicAnswerLength;
+}
+
+int AnswerCheck::get_scienceAnswerLength() {
+    return scienceAnswerLength;
+}
+
 AnswerCheck::~AnswerCheck() {
     delete[] correctHistoryAnswers;
     delete[] correctVideoGameAnswers;

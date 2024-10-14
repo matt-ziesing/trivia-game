@@ -38,6 +38,20 @@ public:
     void set_musicAnswerLength(int musicLength);
     void set_scienceAnswerLength(int scienceLength);
 
+    std::string* get_correctHistoryAnswers();
+    std::string* get_correctVideoGameAnswers();
+    std::string* get_correctGeneralKnowledgeAnswers();
+    std::string* get_correctSportsAnswers();
+    std::string* get_correctMusicAnswers();
+    std::string* get_correctScienceAnswers();
+    
+    int get_historyAnswerLength();
+    int get_videoGameAnswerLength();
+    int get_generalKnowledgeAnswerLength();
+    int get_sportsAnswerLength();
+    int get_musicAnswerLength();
+    int get_scienceAnswerLength();
+
     ~AnswerCheck();
 } ;
 
