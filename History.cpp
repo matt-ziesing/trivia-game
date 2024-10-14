@@ -33,6 +33,8 @@ void History::questionDisplay() {
         cout << questions[4] << endl;
         
     }
+    cout << "(Please enter any number answer as a number, and any worded answer as a word." << endl
+         << " Spacing and capitalisation do not matter.)" << endl;
 }
 
 void History::questionDelete() {
@@ -75,13 +77,8 @@ int History::get_maxQuestions() {
 }
 
 void History::set_Questions(string* questions) {
-    //History::questions = questions; // sets the given array of questions to be the contained array of questions
-    delete[] questions;
-
-    History::questions = new std::string[5]{};
-    for (int i = 0; i < 5; i++) {
-        History::questions[i] = questions[i];
-    }
+    History::questions = questions; // sets the given array of questions to be the contained array of questions
+    
 }
 
 void History::set_maxQuestions(int max_questions) {

@@ -33,6 +33,8 @@ void Science::questionDisplay() {
         cout << questions[4] << endl;
         
     }
+    cout << "(Please enter any number answer as a number, and any worded answer as a word." << endl
+         << " Spacing and capitalisation do not matter.)" << endl;
 }
 
 void Science::questionDelete() {

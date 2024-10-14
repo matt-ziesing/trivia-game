@@ -209,9 +209,9 @@ bool AnswerCheck::correctCheck(QuestionDisplay* question, UserChoices user) {
                         copy_index--;
                     }
                 }
-            scienceAnswerLength--;
-            correctScienceAnswers = tempArray;
-            return true;
+                scienceAnswerLength--;
+                correctScienceAnswers = tempArray;
+                return true;
             }
         }
     }

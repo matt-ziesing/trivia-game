@@ -39,8 +39,8 @@ int main() {
                 userPicker.categoryChoice();
 
                 if (userPicker.get_chosenCategory() == string(1,'1')) {
-                    system("clear");
                     if (userPicker.get_historyLength() > 0) {
+                        system("clear");
                         userPicker.questionSelect();
                         history.set_chosenQuestion(userPicker.get_chosenQuestion());
                         q = &history;
@@ -52,6 +52,7 @@ int main() {
                         q->set_Answer(userAnswer);
 
                         if (ans.correctCheck(q, userPicker) == true) {
+                            system("clear");
                             cout << "You have answered correctly! Good job" << endl;
                             history.questionDelete();
                             userPicker.set_historyLength(history.get_historyLength());
@@ -64,8 +65,8 @@ int main() {
                     }
 
                 } else if (userPicker.get_chosenCategory() == string(1,'2')) {
-                    system("clear");
                     if (userPicker.get_videoGameLength() > 0) {
+                        system("clear");
                         userPicker.questionSelect();
                         video.set_chosenQuestion(userPicker.get_chosenQuestion());
                         q = &video;
@@ -77,6 +78,7 @@ int main() {
                         q->set_Answer(userAnswer);
 
                         if (ans.correctCheck(q, userPicker) == true) {
+                            system("clear");
                             cout << "You have answered correctly! Good job" << endl;
                             video.questionDelete();
                             userPicker.set_videoGameLength(video.get_videoGameLength());
@@ -89,8 +91,8 @@ int main() {
                     }
 
                 } else if (userPicker.get_chosenCategory() == string(1,'3')) {
-                    system("clear");
                     if (userPicker.get_generalKnowledgeLength() > 0) {
+                        system("clear");
                         userPicker.questionSelect();
                         general.set_chosenQuestion(userPicker.get_chosenQuestion());
                         q = &general;
@@ -102,6 +104,7 @@ int main() {
                         q->set_Answer(userAnswer);
 
                         if (ans.correctCheck(q, userPicker) == true) {
+                            system("clear");
                             cout << "You have answered correctly! Good job" << endl;
                             general.questionDelete();
                             userPicker.set_generalKnowledgeLength(general.get_generalKnowledgeLength());
@@ -114,8 +117,8 @@ int main() {
                     }
 
                 } else if (userPicker.get_chosenCategory() == string(1,'4')) {
-                    system("clear");
                     if (userPicker.get_sportsLength() > 0) {
+                        system("clear");
                         userPicker.questionSelect();
                         sport.set_chosenQuestion(userPicker.get_chosenQuestion());
                         q = &sport;
@@ -127,6 +130,7 @@ int main() {
                         q->set_Answer(userAnswer);
 
                         if (ans.correctCheck(q, userPicker) == true) {
+                            system("clear");
                             cout << "You have answered correctly! Good job" << endl;
                             sport.questionDelete();
                             userPicker.set_sportsLength(sport.get_sportsLength());
@@ -139,8 +143,8 @@ int main() {
                     }
 
                 } else if (userPicker.get_chosenCategory() == string(1,'5')) {
-                    system("clear");
                     if (userPicker.get_musicLength() > 0) {
+                        system("clear");
                         userPicker.questionSelect();
                         music.set_chosenQuestion(userPicker.get_chosenQuestion());
                         q = &music;
@@ -152,6 +156,7 @@ int main() {
                         q->set_Answer(userAnswer);
 
                         if (ans.correctCheck(q, userPicker) == true) {
+                            system("clear");
                             cout << "You have answered correctly! Good job" << endl;
                             music.questionDelete();
                             userPicker.set_musicLength(music.get_musicLength());
@@ -164,8 +169,8 @@ int main() {
                     }
 
                 } else if (userPicker.get_chosenCategory() == string(1,'6')) {
-                    system("clear");
                     if (userPicker.get_scienceLength() > 0) {
+                        system("clear");
                         userPicker.questionSelect();
                         science.set_chosenQuestion(userPicker.get_chosenQuestion());
                         q = &science;
@@ -177,6 +182,7 @@ int main() {
                         q->set_Answer(userAnswer);
 
                         if (ans.correctCheck(q, userPicker) == true) {
+                            system("clear");
                             std::cout << "You have answered correctly! Good job" << endl;
                             science.questionDelete();
                             userPicker.set_scienceLength(science.get_scienceLength());
@@ -189,10 +195,10 @@ int main() {
                     }
                 }    
             } else if (ans.get_Count() == 30) { 
-            system("clear");
-            cout << "You have successfully answered every question in every category. Good job!" << endl << endl;
-            userTotal.set_Count(ans.get_Count());
-            userCorrect = false;
+                system("clear");
+                cout << "You have successfully answered every question in every category. Good job!" << endl << endl;
+                userTotal.set_Count(ans.get_Count());
+                userCorrect = false;
             }
         }
         LeaderScores player("NULL", userTotal.get_Count());
@@ -216,19 +222,13 @@ int main() {
                 if (userDecision == string(1,'y')) {
                     reset.resetScore(&userTotal, &ans);
                     reset.resetQuestions(&history, &video, &general, &sport, &music, &science, &userPicker);
-                    cout << history.get_maxQuestions() << endl;
-                    cout << ans.get_historyAnswerLength() << endl;
-                    for (int i = 0; i < history.get_maxQuestions(); i++) {
-                        cout << ans.get_correctHistoryAnswers()[i] << endl << endl;
-                        cout << history.get_Questions()[i] << endl;
-                    }
-                    sleep(10);
                     validInput = true;
-                    system("clear");
 
                 } else if (userDecision == string(1,'n')) {
                     replay = false;
                     validInput = true;
+                    system("clear");
+                    cout << "Thank you for playing the trivia game :)" << endl;
 
                 } else {
                     cout << "You have not entered a valid input. Please try again." << endl
