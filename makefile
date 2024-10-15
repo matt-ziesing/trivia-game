@@ -1,29 +1,24 @@
-h-test:	History.cpp CategoryPicker.cpp QuestionDisplay.cpp historyTest-main.cpp
-	g++ -Wall -o ht History.cpp CategoryPicker.cpp QuestionDisplay.cpp historyTest-main.cpp
+CXX = g++
 
-vg-test: History.cpp VideoGames.cpp CategoryPicker.cpp QuestionDisplay.cpp vidgameTest-main.cpp
-	g++ -Wall -o vdt VideoGames.cpp History.cpp CategoryPicker.cpp QuestionDisplay.cpp vidgameTest-main.cpp
+CXXFLAGS = -std=c++11 -Wall -Wextra
 
-gk-test: History.cpp VideoGames.cpp GeneralKnowledge.cpp CategoryPicker.cpp QuestionDisplay.cpp genKnowledgeTest-main.cpp
-	g++ -Wall -o gkt History.cpp VideoGames.cpp GeneralKnowledge.cpp CategoryPicker.cpp QuestionDisplay.cpp genKnowledgeTest-main.cpp
+GAMESRCS = QuestionDisplay.cpp UserChoices.cpp History.cpp VideoGames.cpp GeneralKnowledge.cpp Sports.cpp Music.cpp Science.cpp CorrectTotal.cpp AnswerCheck.cpp LeaderScores.cpp LeaderBoard.cpp GameReset.cpp runscript.cpp
 
-sp-test: Sports.cpp History.cpp VideoGames.cpp GeneralKnowledge.cpp CategoryPicker.cpp QuestionDisplay.cpp sportsTest-main.cpp
-	g++ -Wall -o spt Sports.cpp History.cpp VideoGames.cpp GeneralKnowledge.cpp CategoryPicker.cpp QuestionDisplay.cpp sportsTest-main.cpp
+.PHONY: full
 
-m-test: Music.cpp Sports.cpp History.cpp VideoGames.cpp GeneralKnowledge.cpp CategoryPicker.cpp QuestionDisplay.cpp musicTest-main.cpp
-	g++ -Wall -o mt Music.cpp Sports.cpp History.cpp VideoGames.cpp GeneralKnowledge.cpp CategoryPicker.cpp QuestionDisplay.cpp musicTest-main.cpp
+full: game
+		./game
+		@make -s clean
 
-sc-test: Science.cpp Music.cpp Sports.cpp History.cpp VideoGames.cpp GeneralKnowledge.cpp CategoryPicker.cpp QuestionDisplay.cpp scienceTest-main.cpp
-	g++ -Wall -o sct Science.cpp Music.cpp Sports.cpp History.cpp VideoGames.cpp GeneralKnowledge.cpp CategoryPicker.cpp QuestionDisplay.cpp scienceTest-main.cpp
+.PHONY: debug
 
-ans-test: History.cpp CategoryPicker.cpp QuestionDisplay.cpp CorrectTotal.cpp AnswerCheck.cpp testing.cpp
-	g++ -Wall -o ans History.cpp CategoryPicker.cpp QuestionDisplay.cpp CorrectTotal.cpp AnswerCheck.cpp testing.cpp
+debug: debug
+		./debug
 
-l-test: History.cpp CategoryPicker.cpp QuestionDisplay.cpp CorrectTotal.cpp AnswerCheck.cpp LeaderScores.cpp LeaderBoard.cpp testing.cpp
-	g++ -Wall -o lt History.cpp CategoryPicker.cpp QuestionDisplay.cpp CorrectTotal.cpp AnswerCheck.cpp LeaderScores.cpp LeaderBoard.cpp testing.cpp
+game: $(GAMESRCS)
+	@$(CXX) $(CXXFLAGS) -o game $(GAMESRCS)
 
-replay: GameReset.cpp History.cpp CategoryPicker.cpp QuestionDisplay.cpp CorrectTotal.cpp AnswerCheck.cpp LeaderScores.cpp LeaderBoard.cpp testing.cpp
-	g++ -Wall -o r GameReset.cpp History.cpp CategoryPicker.cpp QuestionDisplay.cpp CorrectTotal.cpp AnswerCheck.cpp LeaderScores.cpp LeaderBoard.cpp testing.cpp
+.PHONY: clean
 
-full: QuestionDisplay.cpp UserChoices.cpp History.cpp VideoGames.cpp GeneralKnowledge.cpp Sports.cpp Music.cpp Science.cpp CorrectTotal.cpp AnswerCheck.cpp LeaderScores.cpp LeaderBoard.cpp GameReset.cpp runscript.cpp
-	g++ -Wall -o game QuestionDisplay.cpp UserChoices.cpp History.cpp VideoGames.cpp GeneralKnowledge.cpp Sports.cpp Music.cpp Science.cpp CorrectTotal.cpp AnswerCheck.cpp LeaderScores.cpp LeaderBoard.cpp GameReset.cpp runscript.cpp
+clean:
+	@rm -f game

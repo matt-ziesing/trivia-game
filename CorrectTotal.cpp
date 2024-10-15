@@ -5,6 +5,7 @@ CorrectTotal::CorrectTotal() {
 }
 
 bool CorrectTotal::correctCheck(QuestionDisplay* question) {
+    question->set_Answer("NULL");
     return false; // default state of the function just the correct count ot be what it was before
 }
 
