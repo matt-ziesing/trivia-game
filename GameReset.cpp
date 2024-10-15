@@ -2,6 +2,7 @@
 
 #include <iostream>
 
+// this function resets the player count, the answer string array and the answer string array length
 void GameReset::resetScore(CorrectTotal* playerTotal, AnswerCheck* ans) {
     playerTotal->set_Count(0);
     ans->set_Count(0);
@@ -62,6 +63,8 @@ void GameReset::resetScore(CorrectTotal* playerTotal, AnswerCheck* ans) {
 
 }
 
+// this function resets the different arrays for contained questions, and the length representing how many
+// question are left
 void GameReset::resetQuestions(History* history, VideoGames* video, GeneralKnowledge* general, 
                                Sports* sport, Music* music, Science* science, UserChoices* user) {
 

@@ -2,6 +2,7 @@
 #include <string>
 #include <cctype>
 
+// this class sets all of the answer string arrays and the length of them as well
 AnswerCheck::AnswerCheck() {
     correctHistoryAnswers = new std::string[5]{};
     correctHistoryAnswers[0] = "1901";
@@ -53,10 +54,11 @@ AnswerCheck::AnswerCheck() {
     scienceAnswerLength = 5;
 }
 
-// changes the user's given answer to include no spaces or capitalisation
+// checks the user answer to see if it is correct to the excat question given or not
 bool AnswerCheck::correctCheck(QuestionDisplay* question, UserChoices user) {
-    // sets a string to be what the user given answer actually is
     std::string changedAnswer = question->get_Answer();
+
+    // this loop is used to reduce the user given answer to include no capitalisation or spaces
     for(long unsigned int j = 0; j < changedAnswer.size(); j++) {
         if (changedAnswer[j] == ' ') {
             changedAnswer.erase(j,1);
@@ -68,11 +70,16 @@ bool AnswerCheck::correctCheck(QuestionDisplay* question, UserChoices user) {
     }
     question->set_Answer(changedAnswer);
 
-    // checks if the users given answer is correct
+    // the following if and else if statements are used to determine if the answer given matches the EXACT
+    // question given by the program, and not just any answer given
+
     if (user.get_chosenCategory() == std::string(1,'1')) {
+        
+        // only runs if correct
         if (question->get_Answer() == correctHistoryAnswers[user.get_chosenQuestion() - 1]) {
-            // updates the player's correct total count
             set_Count(get_Count() + 1);
+
+            // this will delete the answer from the history array if there are still questions in the category
             if (historyAnswerLength > 0) {
                 std::string* tempArray = new std::string[historyAnswerLength - 1]{};
                 int pasteIndex = 0;
@@ -91,9 +98,14 @@ bool AnswerCheck::correctCheck(QuestionDisplay* question, UserChoices user) {
                 return true;
             }
         }
+
     } else if (user.get_chosenCategory() == std::string(1,'2')) {
+
+        // only runs if the user answer is correct
         if (question->get_Answer() == correctVideoGameAnswers[user.get_chosenQuestion() - 1]) {
             set_Count(get_Count() + 1);
+
+            // deletes the answer from the video game array if there are still questions left in the category
             if (videoGameAnswerLength > 0) {
                 std::string* tempArray = new std::string[videoGameAnswerLength - 1]{};
                 int pasteIndex = 0;
@@ -112,9 +124,14 @@ bool AnswerCheck::correctCheck(QuestionDisplay* question, UserChoices user) {
                 return true;
             }
         }
+
     } else if (user.get_chosenCategory() == std::string(1,'3')) {
+
+        // only runs if the exact user answer is correct to the exact question
         if (question->get_Answer() == correctGeneralKnowledgeAnswers[user.get_chosenQuestion() - 1]) {
             set_Count(get_Count() + 1);
+
+            // only runs if there is at least 1 question left in the general knowledge category
             if (generalKnowledgeAnswerLength > 0) {
                 std::string* tempArray = new std::string[generalKnowledgeAnswerLength - 1]{};
                 int pasteIndex = 0;
@@ -133,9 +150,14 @@ bool AnswerCheck::correctCheck(QuestionDisplay* question, UserChoices user) {
                 return true;
             }
         }
+
     } else if (user.get_chosenCategory() == std::string(1,'4')) {
+
+        // if the exact user answer matches the answer to the exact question asked it will run
         if (question->get_Answer() == correctSportsAnswers[user.get_chosenQuestion() - 1]) {
             set_Count(get_Count() + 1);
+
+            // deletes the answer from the sports array if there is at least one question left in the category
             if (sportAnswerLength > 0) {
                 std::string* tempArray = new std::string[sportAnswerLength - 1]{};
                 int pasteIndex = 0;
@@ -156,8 +178,12 @@ bool AnswerCheck::correctCheck(QuestionDisplay* question, UserChoices user) {
         }
 
     } else if (user.get_chosenCategory() == std::string(1,'5')) {
+
+        // only runs if the exact answer given matches the answer to the exact question
         if (question->get_Answer() == correctMusicAnswers[user.get_chosenQuestion() - 1]) {
             set_Count(get_Count() + 1);
+
+            // deletes the answer if there is still at least 1 question left in the music category
             if (musicAnswerLength > 0) {
                 std::string* tempArray = new std::string[musicAnswerLength - 1]{};
                 int pasteIndex = 0;
@@ -178,8 +204,12 @@ bool AnswerCheck::correctCheck(QuestionDisplay* question, UserChoices user) {
         }
 
     } else if (user.get_chosenCategory() == std::string(1,'6')) {
+
+        // only runs if the exact answer given matches the exact answer to the question
         if (question->get_Answer() == correctScienceAnswers[user.get_chosenQuestion() - 1]) {
             set_Count(get_Count() + 1);
+
+            // deletes the answer if there is still at least 1 question in the science category
             if (scienceAnswerLength > 0) {
                 std::string* tempArray = new std::string[scienceAnswerLength - 1]{};
                 int pasteIndex = 0;
@@ -299,6 +329,7 @@ int AnswerCheck::get_scienceAnswerLength() {
     return scienceAnswerLength;
 }
 
+// deallocates the memory used to contain the string arrays in the AnswerCheck class
 AnswerCheck::~AnswerCheck() {
     delete[] correctHistoryAnswers;
     delete[] correctVideoGameAnswers;

@@ -3,6 +3,7 @@
 
 using namespace std;
 
+// default constructor of the class
 LeaderScores::LeaderScores() {
     name = "NULL";
     score = 0;

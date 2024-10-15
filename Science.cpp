@@ -16,7 +16,8 @@ Science::Science() {
 
 void Science::questionDisplay() {
 
-    // this is how the questions will be displayed to the user using the abstract class
+    // displays whatever the chosen question is on the command line using the abstract class inherited from
+    // UserChoice and set in QuestionDisplay classes
     if (get_chosenQuestion() == 1) {
         cout << questions[0] << endl;
 
@@ -33,6 +34,7 @@ void Science::questionDisplay() {
         cout << questions[4] << endl;
         
     }
+    // guiding prompt to allow the user to enter the best possible answer to the given question
     cout << "(Please enter any number answer as a number, and any worded answer as a word." << endl
          << " Spacing and capitalisation do not matter.)" << endl << endl;
 }
