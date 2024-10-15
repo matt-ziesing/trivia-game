@@ -19,7 +19,7 @@ void UserChoices::categoryChoice() {
     int loop_break = 0;
 
     // the below code is how the command window will prompt the user for their choice of category
-    std::cout << "Which oh the quiz categories would you like" << std::endl
+    std::cout << "Which of the quiz categories would you like" << std::endl
               << "(Please enter the number value given for the category)" << std::endl << std::endl
               << "1. History" << std::endl
               << "2. Video Games" << std::endl
